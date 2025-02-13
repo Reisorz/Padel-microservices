@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -30,8 +32,16 @@ public class UserEntity {
     @Column(nullable = false)
     private String city;
 
+    @Column(name = "padel level")
+    private Double padelLevel;
+
     @Column(name = "preferred side")
     private String preferredSide;
 
+    @Column(name = "padel matches id")
+    private List<Long> padelMatchId;
+
+    @Column(name = "padel tournaments id")
+    private List<Long> padelTournamentId;
 
 }

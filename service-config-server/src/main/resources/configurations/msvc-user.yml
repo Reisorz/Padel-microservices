@@ -2,7 +2,7 @@ spring:
   application:
     name: msvc-user
   datasource:
-    url: jdbc:mysql://localhost:3307/user_service_db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/padel_user_service_db?createDatabaseIfNotExist=true
     username: root
     password: Zug55357
     driver-class-name: com.mysql.cj.jdbc.Driver
