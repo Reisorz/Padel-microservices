@@ -28,6 +28,7 @@
 	</scm>
 	<packaging>pom</packaging>
 	<modules>
+		<module>service-padel-court</module>
 		<module>service-user</module>
 		<module>service-config-server</module>
 		<module>service-eureka</module>

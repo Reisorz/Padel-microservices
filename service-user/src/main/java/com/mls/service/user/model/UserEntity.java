@@ -32,16 +32,16 @@ public class UserEntity {
     @Column(nullable = false)
     private String city;
 
-    @Column(name = "padel level")
+    @Column(name = "padel_level")
     private Double padelLevel;
 
-    @Column(name = "preferred side")
+    @Column(name = "preferred_side")
     private String preferredSide;
 
-    @Column(name = "padel matches id")
+    @Column(name = "padel_matches_id")
     private List<Long> padelMatchId;
 
-    @Column(name = "padel tournaments id")
+    @Column(name = "padel_tournaments_id")
     private List<Long> padelTournamentId;
 
 }

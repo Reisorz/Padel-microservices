@@ -18,4 +18,11 @@ spring:
           uri: lb://msvc-user
           predicates:
             - Path=/user/**
-
+        - id: padel-match
+          uri: lb://msvc-padel-match
+          predicates:
+            - Path=/padel-match/**
+        - id: padel-court
+          uri: lb://msvc-padel-court
+          predicates:
+            - Path=/padel-court/**
