@@ -4,6 +4,7 @@ import com.mls.service.padel_court.dto.request.PadelCourtSaveRequest;
 import com.mls.service.padel_court.model.PadelCourtEntity;
 import com.mls.service.padel_court.repository.PadelCourtRepository;
 import com.mls.service.padel_court.service.PadelCourtService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +16,12 @@ public class PadelCourtServiceImpl implements PadelCourtService {
     @Autowired
     private PadelCourtRepository padelCourtRepository;
 
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public PadelCourtEntity savePadelCourt(PadelCourtSaveRequest request) {
-        PadelCourtEntity padelCourt = PadelCourtEntity.builder()
-                .address(request.getAddress())
-                .name(request.getName())
-                .isGlass(request.isGlass())
-                .isExterior(request.isExterior())
-                .number(request.getNumber())
-                .build();
+        PadelCourtEntity padelCourt = mapper.map(request, PadelCourtEntity.class);
         return padelCourtRepository.save(padelCourt);
     }
 
