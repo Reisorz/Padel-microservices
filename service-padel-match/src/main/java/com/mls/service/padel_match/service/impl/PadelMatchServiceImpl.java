@@ -1,6 +1,7 @@
 package com.mls.service.padel_match.service.impl;
 
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
 import com.mls.service.padel_match.service.PadelMatchService;
@@ -18,7 +19,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     private PadelMatchRepository matchRepository;
 
     @Autowired
-    private ModelMapper mapper;
+    private PadelMatchMapper mapper;
 
     @Override
     public List<PadelMatchEntity> getAllMatches() {
@@ -28,18 +29,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     @Transactional
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request) {
-        PadelMatchEntity match = PadelMatchEntity.builder()
-                .matchDateStart(request.getMatchDateStart())
-                .padelCourtId(request.getPadelCourtId())
-                .durationInMinutes(request.getDurationInMinutes())
-                .organizer(request.getOrganizer())
-                .isPrivate(request.isPrivate())
-                .isCompetitive(request.isCompetitive())
-                .matchDateEnd(request.getMatchDateEnd())
-                .matchLevelStart(request.getMatchLevelStart())
-                .matchLevelEnd(request.getMatchLevelEnd())
-                .pricePerPerson(request.getPricePerPerson())
-                .build();
+        PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         return matchRepository.save(match);
     }
 }
