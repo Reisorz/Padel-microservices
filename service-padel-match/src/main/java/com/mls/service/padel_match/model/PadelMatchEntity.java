@@ -22,22 +22,30 @@ public class PadelMatchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime matchDateStart;
+
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime matchDateEnd;
 
+    @Column(nullable = false)
     private Integer durationInMinutes;
 
+    @Column(nullable = false)
     private boolean isCompetitive;
 
+    @Column(nullable = false)
     private boolean isPrivate;
 
+    @Column(nullable = false)
     private Double pricePerPerson;
 
+    @Column(nullable = false)
     private Double matchLevelStart;
 
+    @Column(nullable = false)
     private Double matchLevelEnd;
 
     private List<Long> teamA;
@@ -48,12 +56,14 @@ public class PadelMatchEntity {
 
     private List<Integer> scoreB;
 
-    private boolean isResultValidated;
+    private Boolean isResultValidated;
 
     private Winner winner;
 
+    @Column(nullable = false)
     private Long organizer;
 
+    @Column(nullable = false)
     private Long padelCourtId;
 
 
