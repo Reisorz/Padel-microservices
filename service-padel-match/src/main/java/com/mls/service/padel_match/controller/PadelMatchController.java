@@ -1,5 +1,6 @@
 package com.mls.service.padel_match.controller;
 
+import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.service.impl.PadelMatchServiceImpl;
@@ -16,6 +17,9 @@ public class PadelMatchController {
     @Autowired
     private PadelMatchServiceImpl matchService;
 
+    @Autowired
+    private UserClient userClient;
+
     @GetMapping("/get-all-matches")
     public List<PadelMatchEntity> getAllMatches(){
         return matchService.getAllMatches();
@@ -23,6 +27,7 @@ public class PadelMatchController {
 
     @PostMapping("/create-match")
     public ResponseEntity<String> createMatch(@RequestBody CreateMatchRequest request) {
+        userClient.getUserById(request.getOrganizer());
         matchService.createPadelMatch(request);
         return ResponseEntity.ok("Match created");
     }
