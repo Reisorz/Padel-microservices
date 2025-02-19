@@ -27,7 +27,6 @@ public class PadelMatchController {
 
     @PostMapping("/create-match")
     public ResponseEntity<String> createMatch(@RequestBody CreateMatchRequest request) {
-        userClient.getUserById(request.getOrganizer());
         matchService.createPadelMatch(request);
         return ResponseEntity.ok("Match created");
     }

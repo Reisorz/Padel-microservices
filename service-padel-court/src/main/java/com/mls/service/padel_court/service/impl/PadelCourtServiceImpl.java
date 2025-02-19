@@ -29,4 +29,9 @@ public class PadelCourtServiceImpl implements PadelCourtService {
     public List<PadelCourtEntity> getAllPadelCourts() {
         return padelCourtRepository.findAll();
     }
+
+    @Override
+    public PadelCourtEntity getCourtById(Long id) {
+        return padelCourtRepository.findById(id).orElseThrow(() -> new RuntimeException("Padel court with id " + id + " not found"));
+    }
 }

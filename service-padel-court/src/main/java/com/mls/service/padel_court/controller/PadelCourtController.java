@@ -26,4 +26,10 @@ public class PadelCourtController {
     public List<PadelCourtEntity> getAllPadelCourts(){
         return padelCourtService.getAllPadelCourts();
     }
+
+    @GetMapping("/get-padel-court-by-id/{id}")
+    public ResponseEntity<PadelCourtEntity> getPadelCourtById(@PathVariable Long id) {
+        PadelCourtEntity court = padelCourtService.getCourtById(id);
+        return ResponseEntity.ok(court);
+    }
 }

@@ -15,5 +15,7 @@ public interface PadelCourtService {
 
     public List<PadelCourtEntity> getAllPadelCourts();
 
+    public PadelCourtEntity getCourtById(Long id);
+
 
 }

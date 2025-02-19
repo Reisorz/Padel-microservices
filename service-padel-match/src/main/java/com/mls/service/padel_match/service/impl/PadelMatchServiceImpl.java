@@ -1,5 +1,7 @@
 package com.mls.service.padel_match.service.impl;
 
+import com.mls.service.padel_match.client.PadelCourtClient;
+import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
 import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
@@ -19,6 +21,12 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     private PadelMatchRepository matchRepository;
 
     @Autowired
+    private UserClient userClient;
+
+    @Autowired
+    private PadelCourtClient padelCourtClient;
+
+    @Autowired
     private PadelMatchMapper mapper;
 
     @Override
@@ -29,7 +37,12 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     @Transactional
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request) {
-        //Check if organizer exist
+        //Check if user exists asking msvc-user
+        userClient.getUserById(request.getOrganizer());
+
+        //Check if court exists asking msvc-padel-court
+        padelCourtClient.getPadelCourtById(request.getPadelCourtId());
+
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         return matchRepository.save(match);
     }
