@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public UserEntity findUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
+    }
 }

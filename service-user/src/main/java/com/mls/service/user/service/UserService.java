@@ -9,4 +9,6 @@ public interface UserService {
     public UserEntity registerUser(UserEntity user);
 
     public List<UserEntity> getAllUsers();
+
+    public UserEntity findUserById(Long id);
 }

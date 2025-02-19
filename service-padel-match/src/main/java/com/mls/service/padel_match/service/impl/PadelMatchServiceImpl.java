@@ -29,6 +29,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     @Transactional
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request) {
+        //Check if organizer exist
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         return matchRepository.save(match);
     }
