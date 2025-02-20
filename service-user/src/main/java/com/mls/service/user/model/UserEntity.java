@@ -1,5 +1,6 @@
 package com.mls.service.user.model;
 
+import com.mls.service.user.dto.request.UserUpdateRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,12 +37,14 @@ public class UserEntity {
     private Double padelLevel;
 
     @Column(name = "preferred_side")
-    private String preferredSide;
+    private PreferredSide preferredSide;
 
     @Column(name = "padel_matches_id")
     private List<Long> padelMatchId;
 
     @Column(name = "padel_tournaments_id")
     private List<Long> padelTournamentId;
+
+
 
 }

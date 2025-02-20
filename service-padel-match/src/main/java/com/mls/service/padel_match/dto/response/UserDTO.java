@@ -23,8 +23,13 @@ public class UserDTO {
     private String password;
     private String city;
     private Double padelLevel;
-    private String preferredSide;
+    private PreferredSide preferredSide;
     private List<Long> padelMatchId;
     private List<Long> padelTournamentId;
+
+    public enum PreferredSide {
+        LEFT,
+        RIGHT
+    }
 
 }
