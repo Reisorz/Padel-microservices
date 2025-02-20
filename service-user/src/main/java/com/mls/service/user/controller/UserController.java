@@ -19,15 +19,8 @@ public class UserController {
 
     @PostMapping("/register-user")
     public ResponseEntity<String> registerUser(@RequestBody UserRegisterRequest userRequest) {
-        UserEntity user = UserEntity.builder()
-                .city(userRequest.getCity())
-                .email(userRequest.getEmail())
-                .name(userRequest.getName())
-                .padelLevel(userRequest.getPadelLevel())
-                .password(userRequest.getPassword()) //encode later
-                .build();
-        userService.registerUser(user);
-        return ResponseEntity.ok("User registered succesfully");
+        userService.registerUser(userRequest);
+        return ResponseEntity.ok("User registered successfully");
     }
 
     @GetMapping("/get-all-users")
@@ -44,6 +37,6 @@ public class UserController {
     @PutMapping("/update-user/{id}")
     public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
         userService.updateUser(id ,request);
-        return ResponseEntity.ok("User updated succesfully");
+        return ResponseEntity.ok("User updated successfully");
     }
 }

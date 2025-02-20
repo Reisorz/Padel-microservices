@@ -1,5 +1,6 @@
 package com.mls.service.user.service;
 
+import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.model.UserEntity;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 public interface UserService {
 
-    public UserEntity registerUser(UserEntity user);
+    public UserEntity registerUser(UserRegisterRequest request);
 
     public List<UserEntity> getAllUsers();
 

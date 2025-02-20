@@ -1,5 +1,6 @@
 package com.mls.service.user.mapper;
 
+import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.model.UserEntity;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,17 @@ public class UserMapper {
         userEntity.setPadelLevel(request.getPadelLevel());
         userEntity.setPreferredSide(request.getPreferredSide());
         return userEntity;
+    }
+
+    public UserEntity fromUserRegisterRequestToUserEntity(UserRegisterRequest request) {
+        UserEntity user = UserEntity.builder()
+                .city(request.getCity())
+                .email(request.getEmail())
+                .name(request.getName())
+                .padelLevel(request.getPadelLevel())
+                .password(request.getPassword())
+                .build();
+        return user;
     }
 }
 

@@ -1,5 +1,6 @@
 package com.mls.service.user.service.impl;
 
+import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
@@ -20,7 +21,9 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public UserEntity registerUser(UserEntity user) {
+    public UserEntity registerUser(UserRegisterRequest request) {
+        UserEntity user = userMapper.fromUserRegisterRequestToUserEntity(request);
+        //Encode password before saving
         return userRepository.save(user);
     }
 
