@@ -12,4 +12,6 @@ public interface PadelMatchService {
     public List<PadelMatchEntity> getAllMatches();
 
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request);
+
+    public PadelMatchEntity getMatchById(Long id);
 }

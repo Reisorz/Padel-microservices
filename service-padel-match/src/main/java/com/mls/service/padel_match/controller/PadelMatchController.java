@@ -30,4 +30,10 @@ public class PadelMatchController {
         matchService.createPadelMatch(request);
         return ResponseEntity.ok("Match created");
     }
+
+    @GetMapping("/get-match-by-id/{id}")
+    public ResponseEntity<PadelMatchEntity> getMatchById(@PathVariable Long id) {
+        PadelMatchEntity match = matchService.getMatchById(id);
+        return ResponseEntity.ok(match);
+    }
 }

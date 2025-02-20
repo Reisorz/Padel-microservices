@@ -46,4 +46,9 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         return matchRepository.save(match);
     }
+
+    @Override
+    public PadelMatchEntity getMatchById(Long id) {
+        return matchRepository.findById(id).orElseThrow(() -> new RuntimeException("Match with id " + id + " not found"));
+    }
 }

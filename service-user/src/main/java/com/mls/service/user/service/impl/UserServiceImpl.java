@@ -47,7 +47,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(Long id) {
         UserEntity user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
-        //Delete matches where user was alone or was organizer first
+        //First delete matches where user was organizer
+        //Then delete matches where user was alone
         //Then delete user from other matches
         userRepository.delete(user);
     }
