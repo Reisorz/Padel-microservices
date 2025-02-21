@@ -18,5 +18,7 @@ public interface UserService {
 
     public void deleteUser(Long id);
 
+    public void removeMatchFromUser(Long matchId, Long userId);
+
 
 }

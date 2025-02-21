@@ -18,6 +18,8 @@ public class PadelMatchMapper {
                 .matchDateEnd(request.getMatchDateEnd())
                 .matchLevelStart(request.getMatchLevelStart())
                 .matchLevelEnd(request.getMatchLevelEnd())
+                .teamA(request.getTeamA())
+                .teamB(request.getTeamB())
                 .pricePerPerson(request.getPricePerPerson())
                 .build();
         return match;

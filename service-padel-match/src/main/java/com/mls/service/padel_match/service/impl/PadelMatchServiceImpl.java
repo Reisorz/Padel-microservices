@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -50,5 +51,20 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     public PadelMatchEntity getMatchById(Long id) {
         return matchRepository.findById(id).orElseThrow(() -> new RuntimeException("Match with id " + id + " not found"));
+    }
+
+    @Override
+    public void deleteMatch(Long id) {
+        PadelMatchEntity match = matchRepository.findById(id).orElseThrow(() -> new RuntimeException("Match with id " + id + " not found"));
+
+        List<Long> users = new ArrayList<>();
+        users.addAll(match.getTeamA());
+        users.addAll(match.getTeamB());
+
+        for(Long user: users){
+            //Search user with UserClient
+            //Remove match from that user with UserClient
+
+        }
     }
 }

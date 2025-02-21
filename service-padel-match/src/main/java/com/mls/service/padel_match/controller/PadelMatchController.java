@@ -36,4 +36,14 @@ public class PadelMatchController {
         PadelMatchEntity match = matchService.getMatchById(id);
         return ResponseEntity.ok(match);
     }
+
+    @DeleteMapping("/delete-match/{id}")
+    public ResponseEntity<String> deleteMatch(@PathVariable Long id) {
+
+
+
+        return ResponseEntity.ok("OK");
+    }
+
+
 }

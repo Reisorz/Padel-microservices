@@ -37,12 +37,18 @@ public class UserController {
     @PutMapping("/update-user/{id}")
     public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
         userService.updateUser(id ,request);
-        return ResponseEntity.ok("User updated successfully");
+        return ResponseEntity.ok("User with id " + id + " updated successfully");
     }
 
     @DeleteMapping("/delete-user/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
-        return ResponseEntity.ok("User deleted successfully");
+        return ResponseEntity.ok("User with id " + id + " deleted successfully");
+    }
+
+    @PutMapping("/remove-match-from-user/{matchId}/{userId}")
+    public ResponseEntity<String> removeMatchFromUser(@PathVariable Long matchId, @PathVariable Long userId) {
+        userService.removeMatchFromUser(matchId,userId);
+        return ResponseEntity.ok("Match with id " + matchId + " successfully removed from user with id " + userId);
     }
 }

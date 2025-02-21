@@ -14,4 +14,6 @@ public interface PadelMatchService {
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request);
 
     public PadelMatchEntity getMatchById(Long id);
+
+    public void deleteMatch(Long id);
 }
