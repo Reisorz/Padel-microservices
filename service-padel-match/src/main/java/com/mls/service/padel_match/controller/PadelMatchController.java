@@ -17,9 +17,6 @@ public class PadelMatchController {
     @Autowired
     private PadelMatchServiceImpl matchService;
 
-    @Autowired
-    private UserClient userClient;
-
     @GetMapping("/get-all-matches")
     public List<PadelMatchEntity> getAllMatches(){
         return matchService.getAllMatches();
@@ -39,9 +36,7 @@ public class PadelMatchController {
 
     @DeleteMapping("/delete-match/{id}")
     public ResponseEntity<String> deleteMatch(@PathVariable Long id) {
-
-
-
+        matchService.deleteMatch(id);
         return ResponseEntity.ok("OK");
     }
 
