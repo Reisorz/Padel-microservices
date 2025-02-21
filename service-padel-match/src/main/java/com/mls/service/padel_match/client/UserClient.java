@@ -16,4 +16,7 @@ public interface UserClient {
 
     @PutMapping("/remove-match-from-user/{matchId}/{userId}")
     public ResponseEntity<String> removeMatchFromUser(@PathVariable Long matchId, @PathVariable Long userId);
+
+    @PutMapping("/add-match-to-user/{matchId}/{userId}")
+    public ResponseEntity<String> addMatchToUser(@PathVariable Long matchId, @PathVariable Long userId);
 }

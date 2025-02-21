@@ -38,14 +38,21 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     @Transactional
     public PadelMatchEntity createPadelMatch(CreateMatchRequest request) {
-        //Check if user exists asking msvc-user
-        userClient.getUserById(request.getOrganizer());
-
         //Check if court exists asking msvc-padel-court
         padelCourtClient.getPadelCourtById(request.getPadelCourtId());
 
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
-        return matchRepository.save(match);
+        PadelMatchEntity savedMatch = matchRepository.save(match);
+
+        List<Long> users = new ArrayList<>();
+        users.addAll(savedMatch.getTeamA());
+        users.addAll(savedMatch.getTeamB());
+
+        //Checks if users exist and adds the match to them by UserClient
+        for (Long user: users){
+            userClient.addMatchToUser(savedMatch.getId(),user);
+        }
+        return savedMatch;
     }
 
     @Override

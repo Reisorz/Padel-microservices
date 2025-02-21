@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -39,12 +40,9 @@ public class UserEntity {
     @Column(name = "preferred_side")
     private PreferredSide preferredSide;
 
-    @Column(name = "padel_matches_id")
-    private List<Long> padelMatchId;
-
-    @Column(name = "padel_tournaments_id")
-    private List<Long> padelTournamentId;
-
-
+    @ElementCollection
+    @CollectionTable(name = "user_padel_matches", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "match_id")
+    private List<Long> padelMatchId = new ArrayList<>();
 
 }

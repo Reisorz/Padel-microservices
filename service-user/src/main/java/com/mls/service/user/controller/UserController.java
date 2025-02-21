@@ -51,4 +51,10 @@ public class UserController {
         userService.removeMatchFromUser(matchId,userId);
         return ResponseEntity.ok("Match with id " + matchId + " successfully removed from user with id " + userId);
     }
+
+    @PutMapping("/add-match-to-user/{matchId}/{userId}")
+    public ResponseEntity<String> addMatchToUser(@PathVariable Long matchId, @PathVariable Long userId){
+        userService.addMatchToUser(matchId,userId);
+        return ResponseEntity.ok("Match with id " + matchId + " successfully added to user with id " + userId);
+    }
 }

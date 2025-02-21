@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -48,13 +49,25 @@ public class PadelMatchEntity {
     @Column(nullable = false)
     private Double matchLevelEnd;
 
-    private List<Long> teamA;
+    @ElementCollection
+    @CollectionTable(name = "match_team_a", joinColumns = @JoinColumn(name = "match_id"))
+    @Column(name = "player_id")
+    private List<Long> teamA = new ArrayList<>();
 
-    private List<Long> teamB;
+    @ElementCollection
+    @CollectionTable(name = "match_team_b", joinColumns = @JoinColumn(name = "match_id"))
+    @Column(name = "player_id")
+    private List<Long> teamB = new ArrayList<>();
 
-    private List<Integer> scoreA;
+    @ElementCollection
+    @CollectionTable(name = "match_scores_a", joinColumns = @JoinColumn(name = "match_id"))
+    @Column(name = "score")
+    private List<Integer> scoreA = new ArrayList<>();
 
-    private List<Integer> scoreB;
+    @ElementCollection
+    @CollectionTable(name = "match_scores_b", joinColumns = @JoinColumn(name = "match_id"))
+    @Column(name = "score")
+    private List<Integer> scoreB = new ArrayList<>();
 
     private Boolean isResultValidated;
 
