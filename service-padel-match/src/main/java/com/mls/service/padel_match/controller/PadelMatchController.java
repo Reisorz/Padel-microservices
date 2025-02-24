@@ -40,5 +40,11 @@ public class PadelMatchController {
         return ResponseEntity.ok("OK");
     }
 
+    @DeleteMapping("/delete-match-by-organizer/{id}")
+    public ResponseEntity<String> deleteMatchByOrganizer(@PathVariable Long id) {
+        matchService.deleteAllMatchesByOrganizer(id);
+        return ResponseEntity.ok("All matches where organizer was " + id + " were eliminated");
+    }
+
 
 }

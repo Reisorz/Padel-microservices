@@ -7,7 +7,6 @@ import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
 import com.mls.service.padel_match.service.PadelMatchService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -74,4 +73,16 @@ public class PadelMatchServiceImpl implements PadelMatchService {
 
         matchRepository.deleteById(matchId);
     }
+
+    @Override
+    public void deleteAllMatchesByOrganizer(Long id) {
+        List<PadelMatchEntity> matches = matchRepository.findAllByOrganizer(id);
+
+        for(PadelMatchEntity match : matches) {
+            deleteMatch(match.getId());
+        }
+    }
+
+
+
 }
