@@ -1,0 +1,27 @@
+package com.mls.service.match_user.controller;
+
+import com.mls.service.match_user.service.MatchUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/match-user")
+public class MatchUserController {
+
+    @Autowired
+    private MatchUserService matchUserService;
+
+    @PostMapping("/add-user-to-match/{userId}/{matchId}/{team}")
+    public ResponseEntity<String> addUserToMatch(@PathVariable Long userId, @PathVariable Long matchId, @PathVariable String team) {
+        matchUserService.addUserToMatch(userId, matchId, team);
+        return ResponseEntity.ok("User " + userId + " has been added to the match " + matchId);
+    }
+
+    @DeleteMapping("/remove-user-from-match/{userId}/{matchId}")
+    public ResponseEntity<String> removeUserFromMatch(@PathVariable Long userId, @PathVariable Long matchId) {
+        matchUserService.removeUserFromMatch(userId, matchId);
+        return ResponseEntity.ok("User " + userId + " has been removed from the match " + matchId);
+    }
+
+}
