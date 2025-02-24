@@ -3,8 +3,11 @@ package com.mls.service.match_user.service.impl;
 import com.mls.service.match_user.model.MatchUserEntity;
 import com.mls.service.match_user.repository.MatchUserRepository;
 import com.mls.service.match_user.service.MatchUserService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MatchUserServiceImpl implements MatchUserService {
@@ -22,8 +25,14 @@ public class MatchUserServiceImpl implements MatchUserService {
         return matchUserRepository.save(matchUser);
     }
 
+    @Transactional
     @Override
     public void removeUserFromMatch(Long userId, Long matchId) {
         matchUserRepository.deleteByUserIdAndMatchId(userId, matchId);
+    }
+
+    @Override
+    public List<Long> findAllUsersFromMatch(Long matchId) {
+        return matchUserRepository.findAllUserIdsByMatchId(matchId);
     }
 }
