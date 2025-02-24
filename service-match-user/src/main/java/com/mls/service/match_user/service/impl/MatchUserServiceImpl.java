@@ -35,4 +35,9 @@ public class MatchUserServiceImpl implements MatchUserService {
     public List<Long> findAllUsersFromMatch(Long matchId) {
         return matchUserRepository.findAllUserIdsByMatchId(matchId);
     }
+
+    @Override
+    public List<Long> findAllMatchesFromUser(Long userId) {
+        return  matchUserRepository.findAllMatchIdsByUserId(userId);
+    }
 }

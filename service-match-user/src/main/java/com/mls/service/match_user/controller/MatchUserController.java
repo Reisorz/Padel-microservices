@@ -32,4 +32,10 @@ public class MatchUserController {
         return ResponseEntity.ok(userIds);
     }
 
+    @GetMapping("/get-all-matches-from-user/{userId}")
+    public ResponseEntity<List<Long>> getAllMatchesFromUser(@PathVariable Long userId) {
+        List<Long> matchIds = matchUserService.findAllMatchesFromUser(userId);
+        return ResponseEntity.ok(matchIds);
+    }
+
 }
