@@ -67,8 +67,10 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         users.addAll(match.getTeamA());
         users.addAll(match.getTeamB());
 
-        for(Long user: users){
-            userClient.removeMatchFromUser(matchId, user);
+        if(!users.isEmpty()){
+            for(Long user: users){
+                userClient.removeMatchFromUser(matchId, user);
+            }
         }
 
         matchRepository.deleteById(matchId);
@@ -83,6 +85,12 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         }
     }
 
-
+    @Override
+    public void removeUserFromMatch(Long userId, Long matchId) {
+        PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
+        match.getTeamA().remove(userId);
+        match.getTeamB().remove(userId);
+        matchRepository.save(match);
+    }
 
 }

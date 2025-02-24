@@ -24,7 +24,6 @@ public class UserDTO {
     private String city;
     private Double padelLevel;
     private PreferredSide preferredSide;
-    private List<Long> padelMatchId;
 
     public enum PreferredSide {
         LEFT,

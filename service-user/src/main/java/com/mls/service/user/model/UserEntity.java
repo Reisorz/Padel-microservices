@@ -40,9 +40,5 @@ public class UserEntity {
     @Column(name = "preferred_side")
     private PreferredSide preferredSide;
 
-    @ElementCollection
-    @CollectionTable(name = "user_padel_matches", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "match_id")
-    private List<Long> padelMatchId = new ArrayList<>();
 
 }

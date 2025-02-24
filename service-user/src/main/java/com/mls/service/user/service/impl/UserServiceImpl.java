@@ -1,7 +1,9 @@
 package com.mls.service.user.service.impl;
 
+import com.mls.service.user.client.PadelMatchClient;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
+import com.mls.service.user.dto.response.PadelMatchDTO;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.repository.UserRepository;
@@ -19,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private PadelMatchClient padelMatchClient;
 
     @Override
     public UserEntity registerUser(UserRegisterRequest request) {
