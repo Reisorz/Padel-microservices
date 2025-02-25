@@ -1,5 +1,6 @@
 package com.mls.service.match_user.controller;
 
+import com.mls.service.match_user.model.MatchUserEntity;
 import com.mls.service.match_user.service.MatchUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,15 +28,15 @@ public class MatchUserController {
     }
 
     @GetMapping("/get-all-users-from-match/{matchId}")
-    public ResponseEntity<List<Long>> getAllUsersFromMatch(@PathVariable Long matchId) {
-        List<Long> userIds = matchUserService.findAllUsersFromMatch(matchId);
-        return ResponseEntity.ok(userIds);
+    public ResponseEntity<List<MatchUserEntity>> getAllUsersFromMatch(@PathVariable Long matchId) {
+        List<MatchUserEntity> users = matchUserService.findAllUsersFromMatch(matchId);
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("/get-all-matches-from-user/{userId}")
-    public ResponseEntity<List<Long>> getAllMatchesFromUser(@PathVariable Long userId) {
-        List<Long> matchIds = matchUserService.findAllMatchesFromUser(userId);
-        return ResponseEntity.ok(matchIds);
+    public ResponseEntity<List<MatchUserEntity>> getAllMatchesFromUser(@PathVariable Long userId) {
+        List<MatchUserEntity> matches = matchUserService.findAllMatchesFromUser(userId);
+        return ResponseEntity.ok(matches);
     }
 
 }

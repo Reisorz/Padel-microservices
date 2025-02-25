@@ -12,7 +12,7 @@ public interface MatchUserService {
 
     public void removeUserFromMatch(Long userId, Long matchId);
 
-    public List<Long> findAllUsersFromMatch(Long matchId);
+    public List<MatchUserEntity> findAllUsersFromMatch(Long matchId);
 
-    public List<Long> findAllMatchesFromUser(Long userId);
+    public List<MatchUserEntity> findAllMatchesFromUser(Long userId);
 }

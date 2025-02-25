@@ -33,12 +33,12 @@ public class MatchUserServiceImpl implements MatchUserService {
     }
 
     @Override
-    public List<Long> findAllUsersFromMatch(Long matchId) {
+    public List<MatchUserEntity> findAllUsersFromMatch(Long matchId) {
         return matchUserRepository.findAllUserIdsByMatchId(matchId);
     }
 
     @Override
-    public List<Long> findAllMatchesFromUser(Long userId) {
+    public List<MatchUserEntity> findAllMatchesFromUser(Long userId) {
         return  matchUserRepository.findAllMatchIdsByUserId(userId);
     }
 }
