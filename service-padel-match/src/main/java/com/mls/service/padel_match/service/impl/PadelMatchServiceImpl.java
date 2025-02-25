@@ -4,6 +4,7 @@ import com.mls.service.padel_match.client.MatchUserClient;
 import com.mls.service.padel_match.client.PadelCourtClient;
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.dto.response.MatchUserDTO;
 import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
@@ -80,7 +81,11 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     public void deleteMatch(Long matchId) {
         PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
-        //Fix this*********************
+
+        List<MatchUserDTO> matchUsers = matchUserClient.getAllUsersFromMatch(matchId);
+        for(MatchUserDTO player: matchUsers){
+            matchUserClient.removeUserFromMatch(player.getUserId(),matchId);
+        }
 
         matchRepository.deleteById(matchId);
     }
