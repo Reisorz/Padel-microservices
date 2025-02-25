@@ -43,14 +43,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         PadelMatchEntity savedMatch = matchRepository.save(match);
 
-        List<Long> users = new ArrayList<>();
-        users.addAll(savedMatch.getTeamA());
-        users.addAll(savedMatch.getTeamB());
-
-        //Checks if users exist and adds the match to them by UserClient
-        for (Long user: users){
-            userClient.addMatchToUser(savedMatch.getId(),user);
-        }
+        //Fix this*********************************
         return savedMatch;
     }
 
@@ -62,35 +55,11 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Override
     public void deleteMatch(Long matchId) {
         PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
-
-        List<Long> users = new ArrayList<>();
-        users.addAll(match.getTeamA());
-        users.addAll(match.getTeamB());
-
-        if(!users.isEmpty()){
-            for(Long user: users){
-                userClient.removeMatchFromUser(matchId, user);
-            }
-        }
+        //Fix this*********************
 
         matchRepository.deleteById(matchId);
     }
 
-    @Override
-    public void deleteAllMatchesByOrganizer(Long id) {
-        List<PadelMatchEntity> matches = matchRepository.findAllByOrganizer(id);
 
-        for(PadelMatchEntity match : matches) {
-            deleteMatch(match.getId());
-        }
-    }
-
-    @Override
-    public void removeUserFromMatch(Long userId, Long matchId) {
-        PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
-        match.getTeamA().remove(userId);
-        match.getTeamB().remove(userId);
-        matchRepository.save(match);
-    }
 
 }

@@ -46,15 +46,4 @@ public class UserController {
         return ResponseEntity.ok("User with id " + id + " deleted successfully");
     }
 
-    @PutMapping("/remove-match-from-user/{matchId}/{userId}")
-    public ResponseEntity<String> removeMatchFromUser(@PathVariable Long matchId, @PathVariable Long userId) {
-        userService.removeMatchFromUser(matchId,userId);
-        return ResponseEntity.ok("Match with id " + matchId + " successfully removed from user with id " + userId);
-    }
-
-    @PutMapping("/add-match-to-user/{matchId}/{userId}")
-    public ResponseEntity<String> addMatchToUser(@PathVariable Long matchId, @PathVariable Long userId){
-        userService.addMatchToUser(matchId,userId);
-        return ResponseEntity.ok("Match with id " + matchId + " successfully added to user with id " + userId);
-    }
 }

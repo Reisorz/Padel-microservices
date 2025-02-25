@@ -64,11 +64,7 @@ public class PadelMatchEntity {
     private Winner winner;
 
     @Column(nullable = false)
-    private Long organizer;
-
-    @Column(nullable = false)
     private Long padelCourtId;
-
 
     public enum Winner {
         A,

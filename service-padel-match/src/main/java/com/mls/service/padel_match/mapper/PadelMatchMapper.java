@@ -12,14 +12,11 @@ public class PadelMatchMapper {
                 .matchDateStart(request.getMatchDateStart())
                 .padelCourtId(request.getPadelCourtId())
                 .durationInMinutes(request.getDurationInMinutes())
-                .organizer(request.getOrganizer())
                 .isPrivate(request.isPrivate())
                 .isCompetitive(request.isCompetitive())
                 .matchDateEnd(request.getMatchDateEnd())
                 .matchLevelStart(request.getMatchLevelStart())
                 .matchLevelEnd(request.getMatchLevelEnd())
-                .teamA(request.getTeamA())
-                .teamB(request.getTeamB())
                 .pricePerPerson(request.getPricePerPerson())
                 .build();
         return match;

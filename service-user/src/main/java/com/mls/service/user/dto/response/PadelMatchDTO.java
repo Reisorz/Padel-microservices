@@ -45,8 +45,6 @@ public class PadelMatchDTO {
 
     private Winner winner;
 
-    private Long organizer;
-
     private Long padelCourtId;
 
     public enum Winner {

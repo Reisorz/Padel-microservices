@@ -58,17 +58,5 @@ public class UserServiceImpl implements UserService {
         userRepository.delete(user);
     }
 
-    @Override
-    public void removeMatchFromUser(Long matchId, Long userId) {
-        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User with id " + userId + " not found"));
-        user.getPadelMatchId().remove(matchId);
-        userRepository.save(user);
-    }
 
-    @Override
-    public void addMatchToUser(Long matchId, Long userId) {
-        UserEntity user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User with id " + userId + " not found"));
-        user.getPadelMatchId().add(matchId);
-        userRepository.save(user);
-    }
 }

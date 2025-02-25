@@ -24,6 +24,9 @@ public class MatchUserEntity {
     @Column(nullable = false)
     private Long userId;
 
+    @Column(nullable = false)
+    private boolean isOrganizer;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Team team;
