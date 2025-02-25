@@ -37,6 +37,12 @@ public class CreateMatchRequest {
 
     private Double matchLevelEnd;
 
+    private List<Long> teamA;
+
+    private List<Long> teamB;
+
+    private Long organizer;
+
     private Long padelCourtId;
 
 }

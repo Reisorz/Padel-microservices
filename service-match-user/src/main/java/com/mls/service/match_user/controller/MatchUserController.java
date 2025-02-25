@@ -14,9 +14,9 @@ public class MatchUserController {
     @Autowired
     private MatchUserService matchUserService;
 
-    @PostMapping("/add-user-to-match/{userId}/{matchId}/{team}")
-    public ResponseEntity<String> addUserToMatch(@PathVariable Long userId, @PathVariable Long matchId, @PathVariable String team) {
-        matchUserService.addUserToMatch(userId, matchId, team);
+    @PostMapping("/add-user-to-match/{userId}/{matchId}/{team}/{isOrganizer}")
+    public ResponseEntity<String> addUserToMatch(@PathVariable Long userId, @PathVariable Long matchId, @PathVariable String team, @PathVariable boolean isOrganizer) {
+        matchUserService.addUserToMatch(userId, matchId, team, isOrganizer);
         return ResponseEntity.ok("User " + userId + " has been added to the match " + matchId);
     }
 

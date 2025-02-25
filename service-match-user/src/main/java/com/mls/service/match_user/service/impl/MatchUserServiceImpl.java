@@ -16,11 +16,12 @@ public class MatchUserServiceImpl implements MatchUserService {
     private MatchUserRepository matchUserRepository;
 
     @Override
-    public MatchUserEntity addUserToMatch(Long userId, Long matchId, String team) {
+    public MatchUserEntity addUserToMatch(Long userId, Long matchId, String team, boolean isOrganizer) {
         MatchUserEntity matchUser = MatchUserEntity.builder()
                 .userId(userId)
                 .matchId(matchId)
                 .team(MatchUserEntity.Team.valueOf(team))
+                .isOrganizer(isOrganizer)
                 .build();
         return matchUserRepository.save(matchUser);
     }

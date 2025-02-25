@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface MatchUserService {
 
-    public MatchUserEntity addUserToMatch(Long userId, Long matchId, String team);
+    public MatchUserEntity addUserToMatch(Long userId, Long matchId, String team, boolean isOrganizer);
 
     public void removeUserFromMatch(Long userId, Long matchId);
 

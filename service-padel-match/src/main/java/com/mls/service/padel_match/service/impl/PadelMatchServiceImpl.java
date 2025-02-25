@@ -1,5 +1,6 @@
 package com.mls.service.padel_match.service.impl;
 
+import com.mls.service.padel_match.client.MatchUserClient;
 import com.mls.service.padel_match.client.PadelCourtClient;
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class PadelMatchServiceImpl implements PadelMatchService {
@@ -29,6 +31,9 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Autowired
     private PadelMatchMapper mapper;
 
+    @Autowired
+    private MatchUserClient matchUserClient;
+
     @Override
     public List<PadelMatchEntity> getAllMatches() {
         return matchRepository.findAll();
@@ -40,10 +45,30 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         //Check if court exists asking msvc-padel-court
         padelCourtClient.getPadelCourtById(request.getPadelCourtId());
 
+        //Check if users exist
+        List<Long> players = new ArrayList<>();
+        players.addAll(request.getTeamA());
+        players.addAll(request.getTeamB());
+        for(Long player: players){
+            userClient.getUserById(player);
+        }
+
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         PadelMatchEntity savedMatch = matchRepository.save(match);
 
-        //Fix this*********************************
+        boolean isOrganizer = false;
+        List<Long> teamA = request.getTeamA();
+        for(Long player: teamA){
+            isOrganizer = Objects.equals(player, request.getOrganizer());
+            matchUserClient.addUserToMatch(player,savedMatch.getId(),"A", isOrganizer);
+        }
+
+        List<Long> teamB = request.getTeamB();
+        for(Long player: teamB){
+            isOrganizer = Objects.equals(player, request.getOrganizer());
+            matchUserClient.addUserToMatch(player,savedMatch.getId(),"B", isOrganizer);
+        }
+
         return savedMatch;
     }
 

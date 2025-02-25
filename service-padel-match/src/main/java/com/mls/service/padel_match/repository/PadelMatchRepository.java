@@ -9,5 +9,4 @@ import java.util.List;
 @Repository
 public interface PadelMatchRepository extends JpaRepository<PadelMatchEntity, Long> {
 
-    public List<PadelMatchEntity> findAllByOrganizer(Long id);
 }
