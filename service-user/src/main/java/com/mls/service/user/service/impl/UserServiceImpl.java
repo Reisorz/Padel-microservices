@@ -1,8 +1,10 @@
 package com.mls.service.user.service.impl;
 
+import com.mls.service.user.client.MatchUserClient;
 import com.mls.service.user.client.PadelMatchClient;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
+import com.mls.service.user.dto.response.MatchUserDTO;
 import com.mls.service.user.dto.response.PadelMatchDTO;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
@@ -24,6 +26,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private PadelMatchClient padelMatchClient;
+
+    @Autowired
+    private MatchUserClient matchUserClient;
 
     @Override
     public UserEntity registerUser(UserRegisterRequest request) {
@@ -52,9 +57,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(Long id) {
         UserEntity user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
-        //First delete matches where user was organizer
-        //Then delete matches where user was alone
-        //Then delete user from other matches
+        List<MatchUserDTO> matches = matchUserClient.getAllMatchesFromUser(id);
+        for (MatchUserDTO match : matches){
+            matchUserClient.removeUserFromMatch(id,match.getMatchId());
+        }
         userRepository.delete(user);
     }
 
