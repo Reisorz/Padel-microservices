@@ -12,6 +12,8 @@ public interface MatchUserService {
 
     public void removeUserFromMatch(Long userId, Long matchId);
 
+    public void deleteAllUsersFromMatch(Long matchId);
+
     public List<MatchUserEntity> findAllUsersFromMatch(Long matchId);
 
     public List<MatchUserEntity> findAllMatchesFromUser(Long userId);

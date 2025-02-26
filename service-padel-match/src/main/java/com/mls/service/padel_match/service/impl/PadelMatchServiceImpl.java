@@ -9,6 +9,7 @@ import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
 import com.mls.service.padel_match.service.PadelMatchService;
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -82,14 +83,13 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     public void deleteMatch(Long matchId) {
         PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
 
-        List<MatchUserDTO> matchUsers = matchUserClient.getAllUsersFromMatch(matchId);
-        for(MatchUserDTO player: matchUsers){
-            matchUserClient.removeUserFromMatch(player.getUserId(),matchId);
+        //Fix this method and removeMatchFromUser in MatchUserServiceImpl*******************************************
+        List<MatchUserDTO> matchUserDTOS = matchUserClient.getAllUsersFromMatch(matchId);
+        if(!matchUserDTOS.isEmpty()){
+            matchUserClient.deleteAllUsersFromMatch(matchId);
         }
 
         matchRepository.deleteById(matchId);
     }
-
-
 
 }

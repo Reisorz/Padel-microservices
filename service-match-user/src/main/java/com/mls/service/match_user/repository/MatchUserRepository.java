@@ -14,8 +14,12 @@ public interface MatchUserRepository extends JpaRepository<MatchUserEntity,Long>
     public void deleteByUserIdAndMatchId(Long userId, Long matchId);
 
     @Query("SELECT mu FROM MatchUserEntity mu WHERE mu.matchId = :matchId")
-    List<MatchUserEntity> findAllUserIdsByMatchId(@Param("matchId") Long matchId);
+    List<MatchUserEntity> findAllUsersByMatchId(@Param("matchId") Long matchId);
 
     @Query("SELECT mu FROM MatchUserEntity mu WHERE mu.userId = :userId")
     List<MatchUserEntity> findAllMatchIdsByUserId(@Param("userId") Long userId);
+
+    void deleteByMatchId(Long matchId);
+
+    MatchUserEntity findByMatchIdAndUserId(Long matchId, Long userId);
 }

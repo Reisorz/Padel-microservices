@@ -22,4 +22,7 @@ public interface MatchUserClient {
 
     @DeleteMapping("/remove-user-from-match/{userId}/{matchId}")
     public ResponseEntity<String> removeUserFromMatch(@PathVariable Long userId, @PathVariable Long matchId);
+
+    @DeleteMapping("/delete-all-users-from-match/{matchId}")
+    public ResponseEntity<String > deleteAllUsersFromMatch(@PathVariable Long matchId);
 }

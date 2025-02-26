@@ -27,6 +27,12 @@ public class MatchUserController {
         return ResponseEntity.ok("User " + userId + " has been removed from the match " + matchId);
     }
 
+    @DeleteMapping("/delete-all-users-from-match/{matchId}")
+    public ResponseEntity<String > deleteAllUsersFromMatch(@PathVariable Long matchId){
+        matchUserService.deleteAllUsersFromMatch(matchId);
+        return ResponseEntity.ok("All users from match " + matchId + " were eliminated");
+    }
+
     @GetMapping("/get-all-users-from-match/{matchId}")
     public ResponseEntity<List<MatchUserEntity>> getAllUsersFromMatch(@PathVariable Long matchId) {
         List<MatchUserEntity> users = matchUserService.findAllUsersFromMatch(matchId);
