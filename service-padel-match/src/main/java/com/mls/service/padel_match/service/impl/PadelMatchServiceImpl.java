@@ -83,11 +83,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     public void deleteMatch(Long matchId) {
         PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
 
-        //Fix this method and removeMatchFromUser in MatchUserServiceImpl*******************************************
-        List<MatchUserDTO> matchUserDTOS = matchUserClient.getAllUsersFromMatch(matchId);
-        if(!matchUserDTOS.isEmpty()){
-            matchUserClient.deleteAllUsersFromMatch(matchId);
-        }
+        matchUserClient.deleteAllUsersFromMatch(matchId);
 
         matchRepository.deleteById(matchId);
     }

@@ -36,12 +36,11 @@ public class MatchUserServiceImpl implements MatchUserService {
         MatchUserEntity matchUser = matchUserRepository.findByMatchIdAndUserId(matchId,userId);
         boolean isOrganizer = matchUser.isOrganizer();
 
-        matchUserRepository.deleteByUserIdAndMatchId(userId, matchId);
-        matchUserRepository.flush();
-
-        List<MatchUserEntity> remainingUsers = matchUserRepository.findAllUsersByMatchId(matchId);
-        if(remainingUsers.isEmpty() || isOrganizer) {
+        if(isOrganizer) {
             padelMatchClient.deleteMatch(matchId);
+        }
+        else {
+            matchUserRepository.deleteByUserIdAndMatchId(userId, matchId);
         }
     }
 
