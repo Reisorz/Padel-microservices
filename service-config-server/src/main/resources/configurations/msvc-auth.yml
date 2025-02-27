@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: msvc-auth
+  datasource:
+    url: jdbc:mysql://localhost:3306/padel_auth_service_db?createDatabaseIfNotExist=true
+    username: root
+    password: Zug55357
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+security:
+  jwt:
+    #${JWT_SECRET_KEY} Use environment variables to keep this key secret!
+    secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    expiration-time: 3600000  # 1 hour
+
+server:
+  port: 8086
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
