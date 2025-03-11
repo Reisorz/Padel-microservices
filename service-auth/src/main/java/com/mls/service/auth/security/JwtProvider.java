@@ -21,12 +21,12 @@ public class JwtProvider {
     @Value("${security.jwt.expiration-time}")
     private Long jwtExpiration;
 
-    public String buildToken(final AuthUserEntity authUser, final Long jwtExpiration) {
+    public String buildToken(final AuthUserEntity authUser) {
         return Jwts.builder()
                 .addClaims(Map.of("id", authUser.getId()))
                 .setSubject(authUser.getEmail())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))
+                .setExpiration(new Date(System.currentTimeMillis() + this.jwtExpiration))
                 .signWith(getSignInKey())
                 .compact();
     }
@@ -41,7 +41,7 @@ public class JwtProvider {
     }
 
     //Extracts email
-    public String extractUsername(final String token) {
+    public String extractEmail(final String token) {
         final Claims jwtToken = Jwts.parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()

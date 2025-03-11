@@ -30,3 +30,7 @@ spring:
           uri: lb://msvc-match-user
           predicates:
             - Path=/match-user/**
+        - id: auth
+          uri: lb://msvc-auth
+          predicates:
+            - Path=/auth/**
