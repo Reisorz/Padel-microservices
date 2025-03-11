@@ -1,8 +1,10 @@
 package com.mls.service.padel_court.dto.request;
 
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Data
 public class PadelCourtSaveRequest {
 
