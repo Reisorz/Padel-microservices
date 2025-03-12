@@ -39,7 +39,7 @@ public class PadelCourtServiceTest {
 
     @BeforeEach
     void setUp() {
-        // Inyectamos manualmente el ModelMapper en el servicio
+        // Injecting mapper manually in the service
         ReflectionTestUtils.setField(padelCourtService, "mapper", mapper);
     }
 

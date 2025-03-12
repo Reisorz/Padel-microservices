@@ -26,6 +26,8 @@ spring:
           uri: lb://msvc-padel-court
           predicates:
             - Path=/padel-court/**
+          filters:
+            - AuthFilter
         - id: match-user
           uri: lb://msvc-match-user
           predicates:

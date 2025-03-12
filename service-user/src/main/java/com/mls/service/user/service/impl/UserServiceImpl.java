@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity registerUser(UserRegisterRequest request) {
         UserEntity user = userMapper.fromUserRegisterRequestToUserEntity(request);
-        //Encode password before saving
         return userRepository.save(user);
     }
 
