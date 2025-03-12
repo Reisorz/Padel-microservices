@@ -1,7 +1,9 @@
 package com.mls.service.user.service.impl;
 
+import com.mls.service.user.client.AuthUserClient;
 import com.mls.service.user.client.MatchUserClient;
 import com.mls.service.user.client.PadelMatchClient;
+import com.mls.service.user.dto.request.AuthUserDTO;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.dto.response.MatchUserDTO;
@@ -30,8 +32,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MatchUserClient matchUserClient;
 
+    @Autowired
+    private AuthUserClient authUserClient;
+
     @Override
     public UserEntity registerUser(UserRegisterRequest request) {
+        AuthUserDTO authUserDTO = AuthUserDTO.builder()
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .build();
+        authUserClient.register(authUserDTO);
+
         UserEntity user = userMapper.fromUserRegisterRequestToUserEntity(request);
         return userRepository.save(user);
     }

@@ -23,7 +23,6 @@ public class UserMapper {
                 .email(request.getEmail())
                 .name(request.getName())
                 .padelLevel(request.getPadelLevel())
-                .password(request.getPassword())
                 .build();
         return user;
     }
