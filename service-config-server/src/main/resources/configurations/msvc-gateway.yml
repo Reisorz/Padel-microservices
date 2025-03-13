@@ -14,14 +14,22 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: user-register
+          uri: lb://msvc-user
+          predicates:
+            - Path=/user/register-user
         - id: user
           uri: lb://msvc-user
           predicates:
             - Path=/user/**
+          filters:
+            - AuthFilter
         - id: padel-match
           uri: lb://msvc-padel-match
           predicates:
             - Path=/padel-match/**
+          filters:
+            - AuthFilter
         - id: padel-court
           uri: lb://msvc-padel-court
           predicates:
@@ -32,6 +40,8 @@ spring:
           uri: lb://msvc-match-user
           predicates:
             - Path=/match-user/**
+          filters:
+            - AuthFilter
         - id: auth
           uri: lb://msvc-auth
           predicates:

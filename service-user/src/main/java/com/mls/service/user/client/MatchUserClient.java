@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "msvc-match-user", url = "localhost:8085/match-user")
+@FeignClient(name = "msvc-match-user", url = "localhost:8080/match-user")
 public interface MatchUserClient {
 
     @DeleteMapping("/remove-user-from-match/{userId}/{matchId}")

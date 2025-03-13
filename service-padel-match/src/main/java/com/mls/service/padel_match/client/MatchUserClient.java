@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@FeignClient(name = "msvc-match-user", url = "localhost:8085/match-user")
+@FeignClient(name = "msvc-match-user", url = "localhost:8080/match-user")
 public interface MatchUserClient {
 
     @PostMapping("/add-user-to-match/{userId}/{matchId}/{team}/{isOrganizer}")
