@@ -14,10 +14,16 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: auth
+          uri: lb://msvc-auth
+          predicates:
+            - Path=/auth/**
         - id: user-register
           uri: lb://msvc-user
           predicates:
             - Path=/user/register-user
+
+
         - id: user
           uri: lb://msvc-user
           predicates:
@@ -42,7 +48,3 @@ spring:
             - Path=/match-user/**
           filters:
             - AuthFilter
-        - id: auth
-          uri: lb://msvc-auth
-          predicates:
-            - Path=/auth/**
