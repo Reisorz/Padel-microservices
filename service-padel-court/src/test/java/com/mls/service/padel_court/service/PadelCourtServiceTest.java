@@ -12,8 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
@@ -23,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -45,7 +42,7 @@ public class PadelCourtServiceTest {
 
     @Test
     public void testSavePadelCourt_ShouldSavePadelCourt() {
-        PadelCourtSaveRequest request = DataProvider.newPadelCourtEntity();
+        PadelCourtSaveRequest request = DataProvider.newPadelCourtSaveRequest();
         PadelCourtEntity padelCourt = mapper.map(request, PadelCourtEntity.class);
         given(padelCourtRepository.save(any(PadelCourtEntity.class))).willReturn(padelCourt);
 

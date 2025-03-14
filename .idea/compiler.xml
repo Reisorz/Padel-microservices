@@ -66,6 +66,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="service-auth" />
+        <module name="service-padel-court" />
         <module name="service-gateway" />
       </profile>
     </annotationProcessing>

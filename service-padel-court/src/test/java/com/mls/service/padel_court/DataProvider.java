@@ -19,7 +19,7 @@ public class DataProvider {
                 .build();
     }
 
-    public static PadelCourtSaveRequest newPadelCourtEntity() {
+    public static PadelCourtSaveRequest newPadelCourtSaveRequest() {
         return PadelCourtSaveRequest.builder()
                 .address("Calle Lopez 1")
                 .name("Padel Place")
@@ -35,4 +35,5 @@ public class DataProvider {
                 new PadelCourtEntity(1L,"Tres Olivos", "Calle olivo 23",2,false,false),
                 new PadelCourtEntity(1L,"Padel courts", "Calle tenerife 1",1,true,true));
     }
+
 }
