@@ -29,6 +29,17 @@ public class DataProvider {
                 .build();
     }
 
+    public static PadelCourtEntity savePadelCourtEntity() {
+        return PadelCourtEntity.builder()
+                .id(1L)
+                .address("Calle Lopez 1")
+                .name("Padel Place")
+                .number(2)
+                .isGlass(true)
+                .isExterior(false)
+                .build();
+    }
+
     public static List<PadelCourtEntity> listPadelCourtEntity() {
         return List.of(
                 new PadelCourtEntity(1L,"Padel cool", "Calle Palma 12",4,true,false),
