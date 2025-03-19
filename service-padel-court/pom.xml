@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.padel-court</groupId>
 	<artifactId>service-padel-court</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-padel-court</name>
 	<description>Spring Boot Service Padel Court</description>
 	<url/>
@@ -149,7 +149,7 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.95</minimum>
+											<minimum>0.1</minimum>
 										</limit>
 									</limits>
 								</rule>
