@@ -5,7 +5,6 @@ import com.mls.service.padel_court.DataProvider;
 import com.mls.service.padel_court.dto.request.PadelCourtSaveRequest;
 import com.mls.service.padel_court.model.PadelCourtEntity;
 import com.mls.service.padel_court.service.impl.PadelCourtServiceImpl;
-import org.apache.tomcat.Jar;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;

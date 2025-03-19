@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.eureka</groupId>
 	<artifactId>service-eureka</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-eureka</name>
 	<description>Spring Boot Service Eureka</description>
 	<url/>

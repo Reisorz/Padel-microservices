@@ -1,7 +1,6 @@
 package com.mls.service.padel_match.client;
 
 import com.mls.service.padel_match.dto.response.UserDTO;
-import com.mls.service.user.model.UserEntity;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

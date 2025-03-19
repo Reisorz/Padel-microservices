@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.config-server</groupId>
 	<artifactId>service-config-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-config-server</name>
 	<description>Spring Boot Service Config Server</description>
 	<url/>

@@ -1,0 +1,65 @@
+services:
+
+  config-server:
+    build: ./service-config-server
+    ports:
+      - "8888:8888"
+    environment:
+      - EUREKA_HOST=msvc-eureka
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  msvc-eureka:
+    build: ./service-eureka
+    ports:
+      - "8761:8761"
+    environment:
+      - CONFIG_SERVER_HOST=config-server
+    depends_on:
+      config-server:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8761/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  msvc-user: #Name of the msvc from application.yml
+    build: ./service-user  # Route of Dockerfile
+    ports:
+      - "8081:8081"         # host:container
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Zug55357
+      - CONFIG_SERVER_HOST=config-server
+    depends_on:
+      config-server:
+        condition: service_healthy
+      msvc-eureka:
+        condition: service_healthy
+      msvc-user-db:
+        condition: service_healthy
+
+  msvc-user-db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Zug55357
+      MYSQL_DATABASE: padel_user_service_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+
+volumes:
+  mysql-data:
