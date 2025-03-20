@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.auth</groupId>
 	<artifactId>service-auth</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-auth</name>
 	<description>Spring Boot Service Auth</description>
 	<url/>

@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.gateway</groupId>
 	<artifactId>service-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-gateway</name>
 	<description>Spring Boot Service Gateway</description>
 	<url/>

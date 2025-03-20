@@ -11,3 +11,9 @@ spring:
       server:
         native:
           search-locations: classpath:/configurations
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
