@@ -58,9 +58,9 @@ services:
     ports:
       - "8081:8081"         # host:container
     environment:
-      - DB_URL=jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true
-      - DB_USER=root
-      - DB_PASS=Zug55357
+#      - DB_URL=jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true
+#      - DB_USER=root
+#      - DB_PASS=Zug55357
       - CONFIG_SERVER_HOST=config-server
     networks:
       - spring
