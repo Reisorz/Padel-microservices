@@ -46,6 +46,7 @@ services:
       - USER_MSVC_DB_URL=${DOCKER_USER_MSVC_DB_URL}
       - USER_MSVC_DB_USER=${USER_MSVC_DB_USER}
       - USER_MSVC_DB_PASS=${USER_MSVC_DB_PASS}
+      - EUREKA_HOST=msvc-eureka
     networks:
       - spring
     depends_on:
@@ -84,6 +85,7 @@ services:
       - DB_URL=jdbc:mysql://msvc-padel-court-db:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true
       - DB_USER=root
       - DB_PASS=Zug55357
+      - EUREKA_HOST=msvc-eureka
     networks:
       - spring
     depends_on:
@@ -122,6 +124,7 @@ services:
       - DB_USER=root
       - DB_PASS=Zug55357
       - JWT_SECRET_KEY=3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+      - EUREKA_HOST=msvc-eureka
     networks:
       - spring
     depends_on:

@@ -5,9 +5,9 @@ spring:
     config:
       enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/padel_padel_match_service_db?createDatabaseIfNotExist=true
-    username: root
-    password: Zug55357
+    url: ${PADEL_MATCH_MSVC_DB_URL}
+    username: ${PADEL_MATCH_MSVC_DB_USER}
+    password: ${PADEL_MATCH_MSVC_DB_PASS}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
