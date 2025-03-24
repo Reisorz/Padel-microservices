@@ -43,9 +43,9 @@ services:
     ports:
       - "8081:8081"         # host:container
     environment:
-      - DB_URL=jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true
-      - DB_USER=root
-      - DB_PASS=Zug55357
+      - USER_MSVC_DB_URL=${DOCKER_USER_MSVC_DB_URL}
+      - USER_MSVC_DB_USER=${USER_MSVC_DB_USER}
+      - USER_MSVC_DB_PASS=${USER_MSVC_DB_PASS}
     networks:
       - spring
     depends_on:
@@ -63,8 +63,9 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Zug55357
+      MYSQL_ROOT_PASSWORD: ${USER_MSVC_DB_PASS}
       MYSQL_DATABASE: padel_user_service_db
+      MYSQL_USER: ${USER_MSVC_DB_USER}
     ports:
       - "3307:3306"
     volumes:
