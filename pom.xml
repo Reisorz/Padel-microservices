@@ -31,7 +31,6 @@
 		<module>service-auth</module>
 		<module>service-padel-court</module>
 		<module>service-user</module>
-		<module>service-config-server</module>
 		<module>service-eureka</module>
 		<module>service-gateway</module>
 		<module>service-padel-match</module>

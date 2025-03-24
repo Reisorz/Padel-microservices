@@ -1,5 +1,52 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: false
+
 spring:
   application:
     name: msvc-gateway
-  config:
-    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:8888
+  cloud:
+    config:
+      enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: auth
+          uri: lb://msvc-auth
+          predicates:
+            - Path=/auth/**
+        - id: user-register
+          uri: lb://msvc-user
+          predicates:
+            - Path=/user/register-user
+
+
+        - id: user
+          uri: lb://msvc-user
+          predicates:
+            - Path=/user/**
+          filters:
+            - AuthFilter
+        - id: padel-match
+          uri: lb://msvc-padel-match
+          predicates:
+            - Path=/padel-match/**
+          filters:
+            - AuthFilter
+        - id: padel-court
+          uri: lb://msvc-padel-court
+          predicates:
+            - Path=/padel-court/**
+          filters:
+            - AuthFilter
+        - id: match-user
+          uri: lb://msvc-match-user
+          predicates:
+            - Path=/match-user/**
+          filters:
+            - AuthFilter
