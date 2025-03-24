@@ -21,6 +21,14 @@
         <module name="service-user" />
         <module name="service-padel-court" />
         <module name="service-eureka" />
+      </profile>
+      <profile name="Annotation profile for service-padel-match" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
         <module name="service-padel-match" />
       </profile>
     </annotationProcessing>
