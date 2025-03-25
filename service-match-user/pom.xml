@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.match-user</groupId>
 	<artifactId>service-match-user</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-match-user</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>

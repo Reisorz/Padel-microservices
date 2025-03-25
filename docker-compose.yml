@@ -5,7 +5,7 @@ services:
     ports:
       - "8761:8761"
     environment:
-      EUREKA_HOST: msvc-eureka
+      - EUREKA_HOST=msvc-eureka
     networks:
       - spring
     healthcheck:
@@ -20,7 +20,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      EUREKA_HOST: msvc-eureka
+      - EUREKA_HOST=msvc-eureka
     networks:
       - spring
     depends_on:
@@ -29,8 +29,6 @@ services:
       msvc-user:
         condition: service_healthy
       msvc-auth:
-        condition: service_healthy
-      msvc-padel-court:
         condition: service_healthy
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
@@ -66,7 +64,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${USER_MSVC_DB_PASS}
       MYSQL_DATABASE: padel_user_service_db
-      MYSQL_USER: ${USER_MSVC_DB_USER}
+    networks:
+      - spring
     ports:
       - "3307:3306"
     volumes:
@@ -105,6 +104,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Zug55357
       MYSQL_DATABASE: padel_padel_court_service_db
+    networks:
+      - spring
     ports:
       - "3308:3306"
     volumes:
@@ -120,10 +121,10 @@ services:
     ports:
       - "8086:8086"
     environment:
-      - DB_URL=jdbc:mysql://msvc-auth-db:3306/padel_auth_service_db?createDatabaseIfNotExist=true
-      - DB_USER=root
-      - DB_PASS=Zug55357
-      - JWT_SECRET_KEY=3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+      - AUTH_MSVC_DB_URL=${DOCKER_AUTH_MSVC_DB_URL}
+      - AUTH_MSVC_DB_USER=${AUTH_MSVC_DB_USER}
+      - AUTH_MSVC_DB_PASS=${AUTH_MSVC_DB_PASS}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - EUREKA_HOST=msvc-eureka
     networks:
       - spring
@@ -142,8 +143,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Zug55357
+      MYSQL_ROOT_PASSWORD: ${AUTH_MSVC_DB_PASS}
       MYSQL_DATABASE: padel_auth_service_db
+    networks:
+      - spring
     ports:
       - "3309:3306"
     volumes:
