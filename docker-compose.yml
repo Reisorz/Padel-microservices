@@ -26,10 +26,6 @@ services:
     depends_on:
       msvc-eureka:
         condition: service_healthy
-      msvc-user:
-        condition: service_healthy
-      msvc-auth:
-        condition: service_healthy
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
       interval: 10s

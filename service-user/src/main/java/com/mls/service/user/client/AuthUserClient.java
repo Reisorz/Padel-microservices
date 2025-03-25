@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "msvc-auth", url = "localhost:8080/auth")
+@FeignClient(name = "msvc-auth")
 public interface AuthUserClient {
 
-    @PostMapping("/register")
+    @PostMapping("/auth/register")
     public void register (@RequestBody AuthUserDTO authUserDTO);
 }
