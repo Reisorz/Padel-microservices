@@ -79,10 +79,11 @@ services:
     ports:
       - "8083:8083"         # host:container
     environment:
-      - DB_URL=jdbc:mysql://msvc-padel-court-db:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true
-      - DB_USER=root
-      - DB_PASS=Zug55357
+      - PADEL_COURT_MSVC_DB_URL=${DOCKER_PADEL_COURT_MSVC_DB_URL}
+      - PADEL_COURT_MSVC_DB_USER=${PADEL_COURT_MSVC_DB_USER}
+      - PADEL_COURT_MSVC_DB_PASS=${PADEL_COURT_MSVC_DB_PASS}
       - EUREKA_HOST=msvc-eureka
+      - PADEL_COURT_HOST=msvc-padel-court
     networks:
       - spring
     depends_on:
@@ -100,7 +101,7 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Zug55357
+      MYSQL_ROOT_PASSWORD: ${PADEL_COURT_MSVC_DB_PASS}
       MYSQL_DATABASE: padel_padel_court_service_db
     networks:
       - spring
@@ -156,11 +157,95 @@ services:
       timeout: 5s
       retries: 10
 
+  msvc-padel-match:
+    build: ./service-padel-match
+    ports:
+      - "8082:8082"
+    environment:
+      - PADEL_MATCH_MSVC_DB_URL=${DOCKER_PADEL_MATCH_MSVC_DB_URL}
+      - PADEL_MATCH_MSVC_DB_USER=${PADEL_MATCH_MSVC_DB_USER}
+      - PADEL_MATCH_MSVC_DB_PASS=${PADEL_MATCH_MSVC_DB_PASS}
+      - EUREKA_HOST=msvc-eureka
+      - PADEL_MATCH_HOST=msvc-padel-match
+    networks:
+      - spring
+    depends_on:
+      msvc-eureka:
+        condition: service_healthy
+      msvc-padel-match-db:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  msvc-padel-match-db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PADEL_MATCH_MSVC_DB_PASS}
+      MYSQL_DATABASE: padel_padel_match_service_db
+    networks:
+      - spring
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql-padel-match-db-data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  msvc-match-user:
+    build: ./service-match-user
+    ports:
+      - "8085:8085"
+    environment:
+      - MATCH_USER_MSVC_DB_URL=${DOCKER_MATCH_USER_MSVC_DB_URL}
+      - MATCH_USER_MSVC_DB_USER=${MATCH_USER_MSVC_DB_USER}
+      - MATCH_USER_MSVC_DB_PASS=${MATCH_USER_MSVC_DB_PASS}
+      - EUREKA_HOST=msvc-eureka
+      - MATCH_USER_HOST=msvc-match-user
+    networks:
+      - spring
+    depends_on:
+      msvc-eureka:
+        condition: service_healthy
+      msvc-match-user-db:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8085/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  msvc-match-user-db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MATCH_USER_MSVC_DB_PASS}
+      MYSQL_DATABASE: padel_match_user_service_db
+    networks:
+      - spring
+    ports:
+      - "3311:3306"
+    volumes:
+      - mysql-match-user-db-data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
 
 volumes:
   mysql-padel-court-db-data:
   mysql-user-db-data:
   mysql-auth-db-data:
+  mysql-padel-match-db-data:
+  mysql-match-user-db-data:
 
 networks:
   spring:
