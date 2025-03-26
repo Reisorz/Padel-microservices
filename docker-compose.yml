@@ -21,6 +21,7 @@ services:
       - "8080:8080"
     environment:
       - EUREKA_HOST=msvc-eureka
+      - GATEWAY_HOST=msvc-gateway
     networks:
       - spring
     depends_on:
@@ -41,6 +42,7 @@ services:
       - USER_MSVC_DB_USER=${USER_MSVC_DB_USER}
       - USER_MSVC_DB_PASS=${USER_MSVC_DB_PASS}
       - EUREKA_HOST=msvc-eureka
+      - USER_HOST=msvc-user
     networks:
       - spring
     depends_on:
@@ -122,6 +124,7 @@ services:
       - AUTH_MSVC_DB_PASS=${AUTH_MSVC_DB_PASS}
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - EUREKA_HOST=msvc-eureka
+      - AUTH_HOST=msvc-auth
     networks:
       - spring
     depends_on:

@@ -17,7 +17,6 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="service-gateway" />
-        <module name="service-match-user" />
         <module name="service-padel-court" />
         <module name="service-eureka" />
       </profile>
@@ -38,6 +37,15 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="service-user" />
+      </profile>
+      <profile name="Annotation profile for service-match-user" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="service-match-user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
