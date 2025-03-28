@@ -1,5 +1,27 @@
 spring:
   application:
     name: msvc-user
-  config:
-    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:8888
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: ${USER_MSVC_DB_URL}
+    username: ${USER_MSVC_DB_USER}
+    password: ${USER_MSVC_DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: ${USER_HOST:localhost}
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/

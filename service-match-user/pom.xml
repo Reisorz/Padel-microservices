@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.mls.service.match-user</groupId>
 	<artifactId>service-match-user</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-match-user</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -37,6 +37,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

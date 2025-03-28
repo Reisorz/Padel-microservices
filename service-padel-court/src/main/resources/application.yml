@@ -1,5 +1,27 @@
 spring:
   application:
     name: msvc-padel-court
-  config:
-    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:8888
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: ${PADEL_COURT_MSVC_DB_URL}
+    username: ${PADEL_COURT_MSVC_DB_USER}
+    password: ${PADEL_COURT_MSVC_DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8083
+
+eureka:
+  instance:
+    hostname: ${PADEL_COURT_HOST:localhost}
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/

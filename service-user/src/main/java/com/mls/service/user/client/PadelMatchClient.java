@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "msvc-padel-match", url = "localhost:8080/padel-match")
+@FeignClient(name = "msvc-padel-match")
 public interface PadelMatchClient {
 
-    @GetMapping("/get-match-by-id/{id}")
+    @GetMapping("/padel-match/get-match-by-id/{id}")
     public PadelMatchDTO getMatchById(@PathVariable Long id);
 
 
-    @DeleteMapping("/delete-match/{id}")
+    @DeleteMapping("/padel-match/delete-match/{id}")
     public String deleteMatch(@PathVariable Long id);
 }

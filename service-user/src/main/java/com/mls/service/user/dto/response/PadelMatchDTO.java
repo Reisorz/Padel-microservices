@@ -37,8 +37,10 @@ public class PadelMatchDTO {
 
     private Double matchLevelEnd;
 
+    @Builder.Default
     private List<Integer> scoreA = new ArrayList<>();
 
+    @Builder.Default
     private List<Integer> scoreB = new ArrayList<>();
 
     private Boolean isResultValidated;

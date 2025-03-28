@@ -52,11 +52,13 @@ public class PadelMatchEntity {
     @ElementCollection
     @CollectionTable(name = "match_scores_a", joinColumns = @JoinColumn(name = "match_id"))
     @Column(name = "score")
+    @Builder.Default
     private List<Integer> scoreA = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "match_scores_b", joinColumns = @JoinColumn(name = "match_id"))
     @Column(name = "score")
+    @Builder.Default
     private List<Integer> scoreB = new ArrayList<>();
 
     private Boolean isResultValidated;

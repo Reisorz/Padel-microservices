@@ -1,5 +1,33 @@
 spring:
   application:
     name: msvc-auth
-  config:
-    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:8888
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: ${AUTH_MSVC_DB_URL}
+    username: ${AUTH_MSVC_DB_USER}
+    password: ${AUTH_MSVC_DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+security:
+  jwt:
+    #${JWT_SECRET_KEY} Use environment variables to keep this key secret!
+    secret-key: ${JWT_SECRET_KEY}
+    expiration-time: 3600000  # 1 hour
+
+server:
+  port: 8086
+
+eureka:
+  instance:
+    hostname: ${AUTH_HOST:localhost}
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
