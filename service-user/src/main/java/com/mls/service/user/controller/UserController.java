@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -18,9 +20,11 @@ public class UserController {
     private UserServiceImpl userService;
 
     @PostMapping("/register-user")
-    public ResponseEntity<String> registerUser(@RequestBody UserRegisterRequest userRequest) {
+    public ResponseEntity<Map<String, String>> registerUser(@RequestBody UserRegisterRequest userRequest) {
         userService.registerUser(userRequest);
-        return ResponseEntity.ok("User registered successfully");
+        Map<String,String> response = new HashMap<>();
+        response.put("message", "User registered successfully");
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/get-all-users")
@@ -35,15 +39,19 @@ public class UserController {
     }
 
     @PutMapping("/update-user/{id}")
-    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
+    public ResponseEntity<Map<String ,String>> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
         userService.updateUser(id ,request);
-        return ResponseEntity.ok("User with id " + id + " updated successfully");
+        Map<String,String> response = new HashMap<>();
+        response.put("message", "User with id " + id + " updated successfully");
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/delete-user/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Map<String ,String>> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
-        return ResponseEntity.ok("User with id " + id + " deleted successfully");
+        Map<String,String> response = new HashMap<>();
+        response.put("message", "User with id " + id + " deleted successfully");
+        return ResponseEntity.ok(response);
     }
 
 }
