@@ -33,7 +33,6 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-                .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(request -> {
@@ -41,21 +40,6 @@ public class SecurityConfig {
                 })
                 .build();
     }
-
-    @Bean
-    public CorsFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:4200");  // Origin definition
-        config.addAllowedMethod("*");  // Allow all Http methods (PUT, POST, GET, etc.)
-        config.addAllowedHeader("*");  // Allow all headers
-        config.setAllowCredentials(true);  // Allows credentials
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);  // Applies CORS configuration to all routes
-
-        return new CorsFilter(source);
-    }
-
 
     @Bean
     public PasswordEncoder passwordEncoder() {

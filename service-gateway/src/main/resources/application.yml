@@ -30,7 +30,10 @@ spring:
               - DELETE
               - OPTIONS
             allowed-headers:
-              - "*"
+              - Authorization
+              - Content-Type
+              - Origin
+              - Accept
             allow-credentials: true
             exposed-headers:
               - "Authorization"
