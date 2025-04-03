@@ -3,7 +3,9 @@ package com.mls.service.auth.service;
 import com.mls.service.auth.dto.AuthUserDTO;
 import com.mls.service.auth.dto.TokenDTO;
 import com.mls.service.auth.model.AuthUserEntity;
+import com.mls.service.auth.model.InvalidTokenEntity;
 import com.mls.service.auth.repository.AuthUserRepository;
+import com.mls.service.auth.repository.InvalidTokenRepository;
 import com.mls.service.auth.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,6 +24,9 @@ public class AuthUserService {
 
     @Autowired
     JwtProvider jwtProvider;
+
+    @Autowired
+    InvalidTokenRepository invalidTokenRepository;
 
     public AuthUserEntity register(AuthUserDTO authUserDTO) {
         Optional<AuthUserEntity> authUserEntity = authUserRepository.findAuthUserEntityByEmail(authUserDTO.getEmail());
@@ -53,11 +58,23 @@ public class AuthUserService {
         if(!jwtProvider.isTokenValid(token)){
             return null;
         }
+        if(invalidTokenRepository.existsByToken(token)){
+            return null;
+        }
         String email = jwtProvider.extractEmail(token);
         if(authUserRepository.findAuthUserEntityByEmail(email).isEmpty()){
             return null;
         }
         return new TokenDTO(token);
+    }
+
+    public void logout(String token) {
+        if (jwtProvider.isTokenValid(token)) {
+            InvalidTokenEntity invalidToken = new InvalidTokenEntity();
+            invalidToken.setToken(token);
+            invalidToken.setExpirationDate(jwtProvider.extractExpiration(token));
+            invalidTokenRepository.save(invalidToken);
+        }
     }
 
 

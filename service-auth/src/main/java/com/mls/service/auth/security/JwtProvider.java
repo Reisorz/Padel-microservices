@@ -50,6 +50,15 @@ public class JwtProvider {
         return jwtToken.getSubject();
     }
 
+    public Date extractExpiration(final String token) {
+        final Claims jwtToken = Jwts.parserBuilder()
+                .setSigningKey(getSignInKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return jwtToken.getExpiration();
+    }
+
     private SecretKey getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(this.secretKey);
         return Keys.hmacShaKeyFor(keyBytes);

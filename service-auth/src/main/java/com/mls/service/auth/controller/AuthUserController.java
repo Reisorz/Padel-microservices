@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthUserController {
@@ -40,5 +43,14 @@ public class AuthUserController {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok(authUser);
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Map<String ,String>> logout(@RequestHeader("Authorization") String authHeader) {
+        String token = authHeader.replace("Bearer ", "");
+        authUserService.logout(token);
+        Map<String ,String> response = new HashMap<>();
+        response.put("Server response: ", "Token revoked");
+        return ResponseEntity.ok(response);
     }
 }
