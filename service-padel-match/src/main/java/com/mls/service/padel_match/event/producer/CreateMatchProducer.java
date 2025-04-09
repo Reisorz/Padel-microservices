@@ -1,10 +1,6 @@
 package com.mls.service.padel_match.event.producer;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mls.service.padel_match.dto.request.CreateMatchRequest;
-import com.mls.service.padel_match.event.CreateMatchEvent;
-import com.mls.service.padel_match.model.PadelMatchEntity;
+import com.mls.common.event.CreateMatchEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
