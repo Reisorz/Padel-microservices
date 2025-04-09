@@ -5,6 +5,7 @@ import com.mls.service.padel_match.client.PadelCourtClient;
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
 import com.mls.service.padel_match.dto.response.MatchUserDTO;
+import com.mls.service.padel_match.event.producer.CreateMatchProducer;
 import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
@@ -36,6 +37,9 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     @Autowired
     private MatchUserClient matchUserClient;
 
+    @Autowired
+    private CreateMatchProducer createMatchProducer;
+
     @Override
     public List<PadelMatchEntity> getAllMatches() {
         return matchRepository.findAll();
@@ -58,6 +62,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         PadelMatchEntity savedMatch = matchRepository.save(match);
 
+        //Add users to match
         boolean isOrganizer = false;
         List<Long> teamA = request.getTeamA();
         for(Long player: teamA){
@@ -70,6 +75,10 @@ public class PadelMatchServiceImpl implements PadelMatchService {
             isOrganizer = Objects.equals(player, request.getOrganizer());
             matchUserClient.addUserToMatch(player,savedMatch.getId(),"B", isOrganizer);
         }
+
+        //Kafka
+        teamA.addAll(teamB);
+        createMatchProducer.sendCreateMatchEvent(teamA, savedMatch.getId());
 
         return savedMatch;
     }

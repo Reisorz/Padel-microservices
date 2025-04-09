@@ -1,8 +1,11 @@
 package com.mls.service.padel_match.mapper;
 
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.event.CreateMatchEvent;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 @Component
 public class PadelMatchMapper {
