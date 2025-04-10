@@ -14,8 +14,7 @@ public class CreateMatchProducer {
 
     private final KafkaTemplate<String, CreateMatchEvent> kafkaTemplate;
 
-    @Value("${spring.kafka.topic.create-match}")
-    private String topic;
+    private final String topic = "create-match";
 
     public CreateMatchProducer(KafkaTemplate<String, CreateMatchEvent> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;

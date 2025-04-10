@@ -4,61 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/commons/src/main/java/com/mls/padel/commons/events/CreateMatchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX eliminate commons module.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-notification/src/main/resources/banner.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/920dffa0-5648-4831-9958-50a3b329d1a9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/920dffa0-5648-4831-9958-50a3b329d1a9/storage_v2/_src_/schema/padel_user_service_db.d-Xr0A.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/mls/common/CommonApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/mls/common/event/CreateMatchEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/mls/common/CommonApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-notification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-notification/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-notification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/event/producer/CreateMatchProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/event/producer/CreateMatchProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Reisorz"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Reisorz&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Reisorz/Padel-microservices.git",
-    "accountId": "68cb095f-0aba-47ac-84f9-58ecc1d83f66"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Reisorz/Padel-microservices.git&quot;,
+    &quot;accountId&quot;: &quot;68cb095f-0aba-47ac-84f9-58ecc1d83f66&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="AUTH_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="AUTH_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_auth_service_db?createDatabaseIfNotExist=true" />
+        <entry key="AUTH_MSVC_DB_USER" value="root" />
+        <entry key="DOCKER_AUTH_MSVC_DB_URL" value="jdbc:mysql://msvc-auth-db:3306/padel_auth_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_MATCH_USER_MSVC_DB_URL" value="jdbc:mysql://msvc-match-user-db:3306/padel_match_user_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_PADEL_COURT_MSVC_DB_URL" value="jdbc:mysql://msvc-padel-court-db:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_PADEL_MATCH_MSVC_DB_URL" value="jdbc:mysql://msvc-padel-match-db:3306/padel_padel_match_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_USER_MSVC_DB_URL" value="jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="JWT_SECRET_KEY" value="3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b" />
+        <entry key="MATCH_USER_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="MATCH_USER_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_match_user_service_db?createDatabaseIfNotExist=true" />
+        <entry key="MATCH_USER_MSVC_DB_USER" value="root" />
+        <entry key="PADEL_COURT_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="PADEL_COURT_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true" />
+        <entry key="PADEL_COURT_MSVC_DB_USER" value="root" />
+        <entry key="PADEL_MATCH_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="PADEL_MATCH_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_padel_match_service_db?createDatabaseIfNotExist=true" />
+        <entry key="PADEL_MATCH_MSVC_DB_USER" value="root" />
+        <entry key="USER_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="USER_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_user_service_db?createDatabaseIfNotExist=true" />
+        <entry key="USER_MSVC_DB_USER" value="root" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2vXOE8RayUR8bMelZkijJbtBAE5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,8 +87,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.Padel-microservices [clean].executor": "Run",
+    "Maven.Padel-microservices [install].executor": "Run",
     "Maven.Padel-microservices [package].executor": "Run",
+    "Maven.service-notification [clean].executor": "Run",
+    "Maven.service-notification [install].executor": "Run",
+    "Maven.service-notification [package].executor": "Run",
+    "Maven.service-padel-court [clean].executor": "Run",
+    "Maven.service-padel-court [package].executor": "Run",
+    "Maven.service-padel-match [clean].executor": "Run",
+    "Maven.service-padel-match [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ServiceEurekaApplication.executor": "Run",
     "git-widget-placeholder": "kafka",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -77,6 +111,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -90,7 +125,97 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CommonsApplication">
+  <component name="RunManager" selected="Maven.service-notification [package]">
+    <configuration name="Padel-microservices [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-notification [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-notification" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-padel-court [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-padel-court" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="CommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="commons" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.commons.CommonsApplication" />
@@ -106,7 +231,13 @@
       </method>
     </configuration>
     <configuration name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="service-eureka" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.eureka.ServiceEurekaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,6 +285,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Maven.Padel-microservices [package]" />
+      <item itemvalue="Maven.service-notification [package]" />
+      <item itemvalue="Maven.service-padel-court [package]" />
+      <item itemvalue="Spring Boot.CommonsApplication" />
+      <item itemvalue="Spring Boot.ServiceAuthApplication" />
+      <item itemvalue="Spring Boot.ServiceEurekaApplication" />
+      <item itemvalue="Spring Boot.ServiceGatewayApplication" />
+      <item itemvalue="Spring Boot.ServiceMatchUserApplication" />
+      <item itemvalue="Spring Boot.ServiceNotificationApplication" />
+      <item itemvalue="Spring Boot.ServicePadelCourtApplication" />
+      <item itemvalue="Spring Boot.ServicePadelMatchApplication" />
+      <item itemvalue="Spring Boot.ServiceUserApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -171,11 +316,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744287839117</updated>
-      <workItem from="1744287840447" duration="1368000" />
+      <workItem from="1744287840447" duration="5736000" />
+      <workItem from="1744293914709" duration="3762000" />
     </task>
+    <task id="LOCAL-00001" summary="FIX eliminate commons module.">
+      <option name="closed" value="true" />
+      <created>1744290138168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744290138168</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FIX eliminate commons module." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX eliminate commons module." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
