@@ -5,9 +5,8 @@
 	<parent>
 		<groupId>com.mls.padel</groupId>
 		<artifactId>Padel-microservices</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
-	<groupId>com.mls.service.notification</groupId>
 	<artifactId>service-notification</artifactId>
 	<version>0.0.1</version>
 	<name>service-notification</name>
@@ -31,9 +30,10 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.mls.common</groupId>
+			<groupId>com.mls.padel</groupId>
 			<artifactId>common</artifactId>
 			<version>0.0.1</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

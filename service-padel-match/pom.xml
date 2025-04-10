@@ -5,9 +5,8 @@
 	<parent>
 		<groupId>com.mls.padel</groupId>
 		<artifactId>Padel-microservices</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
-	<groupId>com.mls.service.padel-match</groupId>
 	<artifactId>service-padel-match</artifactId>
 	<version>0.0.1</version>
 	<name>service-padel-match</name>
