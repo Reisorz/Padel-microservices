@@ -28,7 +28,6 @@
 	</scm>
 	<packaging>pom</packaging>
 	<modules>
-		<module>common</module>
 		<module>service-notification</module>
 		<module>service-padel-match</module>
 		<module>service-auth</module>

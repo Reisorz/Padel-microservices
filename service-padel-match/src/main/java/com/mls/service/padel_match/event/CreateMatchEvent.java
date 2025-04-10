@@ -1,4 +1,4 @@
-package com.mls.common.event;
+package com.mls.service.padel_match.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

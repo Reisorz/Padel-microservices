@@ -1,6 +1,5 @@
 package com.mls.service.padel_match.event.producer;
-
-import com.mls.common.event.CreateMatchEvent;
+import com.mls.service.padel_match.event.CreateMatchEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

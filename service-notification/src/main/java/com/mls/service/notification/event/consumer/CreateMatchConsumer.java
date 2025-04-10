@@ -1,6 +1,7 @@
 package com.mls.service.notification.event.consumer;
 
-import com.mls.common.event.CreateMatchEvent;
+
+import com.mls.padel.commons.events.CreateMatchEvent;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 

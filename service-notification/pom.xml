@@ -30,12 +30,6 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.mls.padel</groupId>
-			<artifactId>common</artifactId>
-			<version>0.0.1</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
