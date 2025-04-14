@@ -1,4 +1,5 @@
 package com.mls.service.notification.event.consumer;
+
 import com.mls.service.notification.event.CreateMatchEvent;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

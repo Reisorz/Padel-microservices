@@ -1,6 +1,7 @@
 package com.mls.service.padel_match.service;
 
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.dto.response.PadelMatchDTO;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,8 @@ public interface PadelMatchService {
     public PadelMatchEntity getMatchById(Long id);
 
     public void deleteMatch(Long id);
+
+    public List<PadelMatchDTO> getAllMatchesAndPlayers();
 
 
 }

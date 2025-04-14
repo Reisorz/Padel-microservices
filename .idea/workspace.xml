@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX eliminate commons module.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-notification/src/main/resources/banner.txt" afterDir="false" />
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX consumer config. Kafka now working properly.">
+      <change afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/PadelMatchDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-notification/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-notification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/event/producer/CreateMatchProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/event/producer/CreateMatchProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/controller/PadelMatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/controller/PadelMatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/PadelMatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/PadelMatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,37 +89,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.Padel-microservices [clean].executor": "Run",
-    "Maven.Padel-microservices [install].executor": "Run",
-    "Maven.Padel-microservices [package].executor": "Run",
-    "Maven.service-notification [clean].executor": "Run",
-    "Maven.service-notification [install].executor": "Run",
-    "Maven.service-notification [package].executor": "Run",
-    "Maven.service-padel-court [clean].executor": "Run",
-    "Maven.service-padel-court [package].executor": "Run",
-    "Maven.service-padel-match [clean].executor": "Run",
-    "Maven.service-padel-match [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ServiceEurekaApplication.executor": "Run",
-    "git-widget-placeholder": "kafka",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Padel-microservices [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;kafka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -216,6 +224,13 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.common.CommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="commons" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.commons.CommonsApplication" />
@@ -289,6 +304,7 @@
       <item itemvalue="Maven.Padel-microservices [package]" />
       <item itemvalue="Maven.service-notification [package]" />
       <item itemvalue="Maven.service-padel-court [package]" />
+      <item itemvalue="Spring Boot.CommonApplication" />
       <item itemvalue="Spring Boot.CommonsApplication" />
       <item itemvalue="Spring Boot.ServiceAuthApplication" />
       <item itemvalue="Spring Boot.ServiceEurekaApplication" />
@@ -317,7 +333,11 @@
       <option name="presentableId" value="Default" />
       <updated>1744287839117</updated>
       <workItem from="1744287840447" duration="5736000" />
-      <workItem from="1744293914709" duration="3762000" />
+      <workItem from="1744293914709" duration="4250000" />
+      <workItem from="1744356237878" duration="1986000" />
+      <workItem from="1744358236646" duration="5000" />
+      <workItem from="1744359901105" duration="3051000" />
+      <workItem from="1744613252432" duration="11598000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -327,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744290138168</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="FIX consumer config. Kafka now working properly.">
+      <option name="closed" value="true" />
+      <created>1744298335637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744298335637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +363,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FIX eliminate commons module." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX eliminate commons module." />
+    <MESSAGE value="FIX consumer config. Kafka now working properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX consumer config. Kafka now working properly." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

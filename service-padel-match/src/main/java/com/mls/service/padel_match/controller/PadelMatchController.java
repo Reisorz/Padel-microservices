@@ -2,6 +2,7 @@ package com.mls.service.padel_match.controller;
 
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.dto.response.PadelMatchDTO;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.service.impl.PadelMatchServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,9 @@ public class PadelMatchController {
         return ResponseEntity.ok("Match with id " + id + " deleted successfully");
     }
 
-
+    @GetMapping("/get-all-matches-and-players")
+    public List<PadelMatchDTO> getAllMatchesAndPlayers(){
+        return matchService.getAllMatchesAndPlayers();
+    }
 
 }

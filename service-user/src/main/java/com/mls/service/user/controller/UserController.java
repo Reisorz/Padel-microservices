@@ -54,4 +54,9 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/get-all-users-by-id")
+    public List<UserEntity> getAllUsersByIds(@RequestParam List<Long> ids) {
+        return userService.getAllUsersByIds(ids);
+    }
+
 }
