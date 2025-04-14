@@ -1,4 +1,28 @@
 services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    networks:
+      - spring
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    networks:
+      - spring
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://${KAFKA_HOST}
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
 
   msvc-eureka:
     build: ./service-eureka
@@ -10,6 +34,23 @@ services:
       - spring
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8761/actuator/health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  msvc-notification:
+    build: ./service-notification
+    ports:
+      - "8087:8087"
+    environment:
+      - EUREKA_HOST=msvc-eureka
+      - KAFKA_HOST=${KAFKA_HOST}
+      - NOTIFICATION_HOST=${NOTIFICATION_HOST}
+    networks:
+      - spring
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8087/actuator/health" ]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -167,6 +208,7 @@ services:
       - PADEL_MATCH_MSVC_DB_PASS=${PADEL_MATCH_MSVC_DB_PASS}
       - EUREKA_HOST=msvc-eureka
       - PADEL_MATCH_HOST=msvc-padel-match
+      - KAFKA_HOST=${KAFKA_HOST}
     networks:
       - spring
     depends_on:

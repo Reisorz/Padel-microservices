@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX consumer config. Kafka now working properly.">
+      <change afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/PadelMatchDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/src/main/java/com/mls/service/notification/event/consumer/CreateMatchConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/controller/PadelMatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/controller/PadelMatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/PadelMatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/PadelMatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Reisorz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Reisorz/Padel-microservices.git&quot;,
+    &quot;accountId&quot;: &quot;68cb095f-0aba-47ac-84f9-58ecc1d83f66&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="AUTH_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="AUTH_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_auth_service_db?createDatabaseIfNotExist=true" />
+        <entry key="AUTH_MSVC_DB_USER" value="root" />
+        <entry key="DOCKER_AUTH_MSVC_DB_URL" value="jdbc:mysql://msvc-auth-db:3306/padel_auth_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_MATCH_USER_MSVC_DB_URL" value="jdbc:mysql://msvc-match-user-db:3306/padel_match_user_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_PADEL_COURT_MSVC_DB_URL" value="jdbc:mysql://msvc-padel-court-db:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_PADEL_MATCH_MSVC_DB_URL" value="jdbc:mysql://msvc-padel-match-db:3306/padel_padel_match_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="DOCKER_USER_MSVC_DB_URL" value="jdbc:mysql://msvc-user-db:3306/padel_user_service_db?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+        <entry key="JWT_SECRET_KEY" value="3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b" />
+        <entry key="MATCH_USER_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="MATCH_USER_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_match_user_service_db?createDatabaseIfNotExist=true" />
+        <entry key="MATCH_USER_MSVC_DB_USER" value="root" />
+        <entry key="PADEL_COURT_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="PADEL_COURT_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_padel_court_service_db?createDatabaseIfNotExist=true" />
+        <entry key="PADEL_COURT_MSVC_DB_USER" value="root" />
+        <entry key="PADEL_MATCH_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="PADEL_MATCH_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_padel_match_service_db?createDatabaseIfNotExist=true" />
+        <entry key="PADEL_MATCH_MSVC_DB_USER" value="root" />
+        <entry key="USER_MSVC_DB_PASS" value="Zug55357" />
+        <entry key="USER_MSVC_DB_URL" value="jdbc:mysql://localhost:3306/padel_user_service_db?createDatabaseIfNotExist=true" />
+        <entry key="USER_MSVC_DB_USER" value="root" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2vXOE8RayUR8bMelZkijJbtBAE5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Padel-microservices [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;kafka&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Maven.service-notification [package]">
+    <configuration name="Padel-microservices [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-notification [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-notification" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-padel-court [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-padel-court" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.common.CommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="commons" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.commons.CommonsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.auth.ServiceAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-eureka" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.eureka.ServiceEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.gateway.ServiceGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceMatchUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-match-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.match_user.ServiceMatchUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceNotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-notification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.notification.ServiceNotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePadelCourtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-padel-court" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_court.ServicePadelCourtApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-padel-match" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_match.ServicePadelMatchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.user.ServiceUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.Padel-microservices [package]" />
+      <item itemvalue="Maven.service-notification [package]" />
+      <item itemvalue="Maven.service-padel-court [package]" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.CommonsApplication" />
+      <item itemvalue="Spring Boot.ServiceAuthApplication" />
+      <item itemvalue="Spring Boot.ServiceEurekaApplication" />
+      <item itemvalue="Spring Boot.ServiceGatewayApplication" />
+      <item itemvalue="Spring Boot.ServiceMatchUserApplication" />
+      <item itemvalue="Spring Boot.ServiceNotificationApplication" />
+      <item itemvalue="Spring Boot.ServicePadelCourtApplication" />
+      <item itemvalue="Spring Boot.ServicePadelMatchApplication" />
+      <item itemvalue="Spring Boot.ServiceUserApplication" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="" />
+      <created>1744287839117</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744287839117</updated>
+      <workItem from="1744287840447" duration="5736000" />
+      <workItem from="1744293914709" duration="4250000" />
+      <workItem from="1744356237878" duration="1986000" />
+      <workItem from="1744358236646" duration="5000" />
+      <workItem from="1744359901105" duration="3051000" />
+      <workItem from="1744613252432" duration="11598000" />
+    </task>
+    <task id="LOCAL-00001" summary="FIX eliminate commons module.">
+      <option name="closed" value="true" />
+      <created>1744290138168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744290138168</updated>
+    </task>
+    <task id="LOCAL-00002" summary="FIX consumer config. Kafka now working properly.">
+      <option name="closed" value="true" />
+      <created>1744298335637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744298335637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FIX eliminate commons module." />
+    <MESSAGE value="FIX consumer config. Kafka now working properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX consumer config. Kafka now working properly." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

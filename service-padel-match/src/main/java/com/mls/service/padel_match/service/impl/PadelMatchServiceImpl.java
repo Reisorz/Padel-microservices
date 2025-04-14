@@ -4,7 +4,11 @@ import com.mls.service.padel_match.client.MatchUserClient;
 import com.mls.service.padel_match.client.PadelCourtClient;
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
+import com.mls.service.padel_match.dto.response.MatchPlayer;
 import com.mls.service.padel_match.dto.response.MatchUserDTO;
+import com.mls.service.padel_match.dto.response.PadelMatchDTO;
+import com.mls.service.padel_match.dto.response.UserDTO;
+import com.mls.service.padel_match.event.producer.CreateMatchProducer;
 import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
@@ -16,7 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class PadelMatchServiceImpl implements PadelMatchService {
@@ -35,6 +42,9 @@ public class PadelMatchServiceImpl implements PadelMatchService {
 
     @Autowired
     private MatchUserClient matchUserClient;
+
+    @Autowired
+    private CreateMatchProducer createMatchProducer;
 
     @Override
     public List<PadelMatchEntity> getAllMatches() {
@@ -58,6 +68,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         PadelMatchEntity savedMatch = matchRepository.save(match);
 
+        //Add users to match
         boolean isOrganizer = false;
         List<Long> teamA = request.getTeamA();
         for(Long player: teamA){
@@ -70,6 +81,10 @@ public class PadelMatchServiceImpl implements PadelMatchService {
             isOrganizer = Objects.equals(player, request.getOrganizer());
             matchUserClient.addUserToMatch(player,savedMatch.getId(),"B", isOrganizer);
         }
+
+        //Kafka
+        teamA.addAll(teamB);
+        createMatchProducer.sendCreateMatchEvent(teamA, savedMatch.getId());
 
         return savedMatch;
     }
@@ -86,6 +101,44 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         matchUserClient.deleteAllUsersFromMatch(matchId);
 
         matchRepository.deleteById(matchId);
+    }
+
+    @Override
+    public List<PadelMatchDTO> getAllMatchesAndPlayers() {
+        List<PadelMatchEntity> matchEntities = matchRepository.findAll();
+        List<PadelMatchDTO> padelMatchDTOS = new ArrayList<>();
+
+        for (PadelMatchEntity matchEntity : matchEntities) {
+            List<MatchUserDTO> matchUserDTOS = matchUserClient.getAllUsersFromMatch(matchEntity.getId());
+
+            List<Long> userIds = new ArrayList<>();
+            for (MatchUserDTO matchUserDTO : matchUserDTOS) {
+                userIds.add(matchUserDTO.getUserId());
+            }
+            List<UserDTO> userDTOS = userClient.getAllUsersByIds(userIds);
+
+            Map<Long, MatchUserDTO> matchUserMap = matchUserDTOS.stream()
+                    .collect(Collectors.toMap(MatchUserDTO::getUserId, Function.identity()));
+
+            List<MatchPlayer> players = new ArrayList<>();
+            for (UserDTO user : userDTOS) {
+                MatchUserDTO matchUserInfo = matchUserMap.get(user.getId());
+                if (matchUserInfo != null) {
+                    MatchPlayer matchPlayer = MatchPlayer.builder()
+                            .userId(user.getId())
+                            .name(user.getName())
+                            .padelLevel(user.getPadelLevel())
+                            .team(matchUserInfo.getTeam())
+                            .isOrganizer(matchUserInfo.isOrganizer())
+                            .build();
+                    players.add(matchPlayer);
+                }
+            }
+
+            PadelMatchDTO padelMatchDTO = mapper.padelMatchEntityToPadelMatchDTO(matchEntity, players);
+            padelMatchDTOS.add(padelMatchDTO);
+        }
+        return padelMatchDTOS;
     }
 
 }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mls.padel</groupId>
 	<artifactId>Padel-microservices</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Padel-microservices</name>
 	<description>Padel matches management microservices.</description>
 	<url/>
@@ -28,12 +28,13 @@
 	</scm>
 	<packaging>pom</packaging>
 	<modules>
+		<module>service-notification</module>
+		<module>service-padel-match</module>
 		<module>service-auth</module>
 		<module>service-padel-court</module>
 		<module>service-user</module>
 		<module>service-eureka</module>
 		<module>service-gateway</module>
-		<module>service-padel-match</module>
 		<module>service-match-user</module>
 	</modules>
 	<properties>
