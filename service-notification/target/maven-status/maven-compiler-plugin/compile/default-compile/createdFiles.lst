@@ -1,4 +1,0 @@
-com\mls\service\notification\event\CreateMatchEvent$CreateMatchEventBuilder.class
-com\mls\service\notification\event\consumer\CreateMatchConsumer.class
-com\mls\service\notification\event\CreateMatchEvent.class
-com\mls\service\notification\ServiceNotificationApplication.class
