@@ -40,6 +40,8 @@ public class PadelMatchDTO {
 
     private List<MatchPlayer> players;
 
+    private PadelCourtDTO court;
+
     @Builder.Default
     private List<Integer> scoreA = new ArrayList<>();
 
@@ -49,8 +51,6 @@ public class PadelMatchDTO {
     private Boolean isResultValidated;
 
     private PadelMatchEntity.Winner winner;
-
-    private Long padelCourtId;
 
 
 }

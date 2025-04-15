@@ -31,6 +31,7 @@ public class PadelMatchEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm", timezone = "UTC")
     private LocalDateTime matchDateEnd;
 
+
     @Column(nullable = false)
     private Integer durationInMinutes;
 

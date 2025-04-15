@@ -4,10 +4,7 @@ import com.mls.service.padel_match.client.MatchUserClient;
 import com.mls.service.padel_match.client.PadelCourtClient;
 import com.mls.service.padel_match.client.UserClient;
 import com.mls.service.padel_match.dto.request.CreateMatchRequest;
-import com.mls.service.padel_match.dto.response.MatchPlayer;
-import com.mls.service.padel_match.dto.response.MatchUserDTO;
-import com.mls.service.padel_match.dto.response.PadelMatchDTO;
-import com.mls.service.padel_match.dto.response.UserDTO;
+import com.mls.service.padel_match.dto.response.*;
 import com.mls.service.padel_match.event.producer.CreateMatchProducer;
 import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
@@ -135,7 +132,9 @@ public class PadelMatchServiceImpl implements PadelMatchService {
                 }
             }
 
-            PadelMatchDTO padelMatchDTO = mapper.padelMatchEntityToPadelMatchDTO(matchEntity, players);
+            PadelCourtDTO court = padelCourtClient.getPadelCourtById(matchEntity.getPadelCourtId());
+
+            PadelMatchDTO padelMatchDTO = mapper.padelMatchEntityToPadelMatchDTO(matchEntity, players, court);
             padelMatchDTOS.add(padelMatchDTO);
         }
         return padelMatchDTOS;
