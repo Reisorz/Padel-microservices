@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD court details to PadelMatchDTO.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX save-padel-court endpoint returns a PadelCourtEntity now.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-court/src/main/java/com/mls/service/padel_court/controller/PadelCourtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/src/main/java/com/mls/service/padel_court/controller/PadelCourtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-court/src/test/java/com/mls/service/padel_court/controller/PadelCourtControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/src/test/java/com/mls/service/padel_court/controller/PadelCourtControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +354,7 @@
       <workItem from="1746603759074" duration="2232000" />
       <workItem from="1746689499961" duration="5776000" />
       <workItem from="1746777764519" duration="1247000" />
-      <workItem from="1747032713308" duration="4451000" />
+      <workItem from="1747032713308" duration="8479000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -398,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744710776629</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FIX save-padel-court endpoint returns a PadelCourtEntity now.">
+      <option name="closed" value="true" />
+      <created>1747045257277</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747045257277</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +417,8 @@
     <MESSAGE value="MERGE kafka -&gt; main" />
     <MESSAGE value="FIX Date format." />
     <MESSAGE value="ADD court details to PadelMatchDTO." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD court details to PadelMatchDTO." />
+    <MESSAGE value="FIX save-padel-court endpoint returns a PadelCourtEntity now." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX save-padel-court endpoint returns a PadelCourtEntity now." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
