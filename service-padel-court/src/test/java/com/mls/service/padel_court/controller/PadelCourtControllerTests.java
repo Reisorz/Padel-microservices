@@ -51,8 +51,13 @@ public class PadelCourtControllerTests {
 
 
         response.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("Padel court saved"));
+                .andExpect(jsonPath("$.name").value(savedEntity.getName()))
+                .andExpect(jsonPath("$.id").value(savedEntity.getId()))
+                .andExpect(jsonPath("$.address").value(savedEntity.getAddress()))
+                .andExpect(jsonPath("$.number").value(savedEntity.getNumber()))
+                .andExpect(jsonPath("$.glass").value(savedEntity.isGlass()))
+                .andExpect(jsonPath("$.exterior").value(savedEntity.isExterior()))
+                .andExpect(status().isOk());
     }
 
     @Test

@@ -17,9 +17,9 @@ public class PadelCourtController {
     private PadelCourtServiceImpl padelCourtService;
 
     @PostMapping("/save-padel-court")
-    public ResponseEntity<String> savePadelCourt(@RequestBody PadelCourtSaveRequest request) {
-        padelCourtService.savePadelCourt(request);
-        return ResponseEntity.ok("Padel court saved");
+    public ResponseEntity<PadelCourtEntity> savePadelCourt(@RequestBody PadelCourtSaveRequest request) {
+        PadelCourtEntity court = padelCourtService.savePadelCourt(request);
+        return ResponseEntity.ok(court);
     }
 
     @GetMapping("/get-all-padel-courts")

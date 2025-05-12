@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX Date format.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD court details to PadelMatchDTO.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/PadelMatchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/PadelMatchDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/mapper/PadelMatchMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/model/PadelMatchEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/model/PadelMatchEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-court/src/main/java/com/mls/service/padel_court/controller/PadelCourtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/src/main/java/com/mls/service/padel_court/controller/PadelCourtController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-court/src/test/java/com/mls/service/padel_court/controller/PadelCourtControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/src/test/java/com/mls/service/padel_court/controller/PadelCourtControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,40 +77,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.Padel-microservices [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Padel-microservices [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Padel-microservices [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.common [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-notification [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-notification [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-notification [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-padel-court [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-padel-court [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-padel-match [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.service-padel-match [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt.executor": "Run",
+    "Maven.Padel-microservices [clean].executor": "Run",
+    "Maven.Padel-microservices [install].executor": "Run",
+    "Maven.Padel-microservices [package].executor": "Run",
+    "Maven.common [clean].executor": "Run",
+    "Maven.common [install].executor": "Run",
+    "Maven.common [package].executor": "Run",
+    "Maven.service-notification [clean].executor": "Run",
+    "Maven.service-notification [install].executor": "Run",
+    "Maven.service-notification [package].executor": "Run",
+    "Maven.service-padel-court [clean].executor": "Run",
+    "Maven.service-padel-court [install].executor": "Run",
+    "Maven.service-padel-court [package].executor": "Run",
+    "Maven.service-padel-match [clean].executor": "Run",
+    "Maven.service-padel-match [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ServiceEurekaApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -122,7 +123,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.service-notification [package]">
+  <component name="RunManager" selected="JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt">
+    <configuration name="PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-padel-court" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mls.service.padel_court.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mls.service.padel_court.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.mls.service.padel_court.controller.PadelCourtControllerTests" />
+      <option name="METHOD_NAME" value="testSavePadelCourt_ShouldSavePadelCourt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Padel-microservices [package]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -290,6 +307,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" />
       <item itemvalue="Maven.Padel-microservices [package]" />
       <item itemvalue="Maven.service-notification [package]" />
       <item itemvalue="Maven.service-padel-court [package]" />
@@ -304,6 +322,11 @@
       <item itemvalue="Spring Boot.ServicePadelMatchApplication" />
       <item itemvalue="Spring Boot.ServiceUserApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -327,7 +350,13 @@
       <workItem from="1744358236646" duration="5000" />
       <workItem from="1744359901105" duration="3051000" />
       <workItem from="1744613252432" duration="11598000" />
-      <workItem from="1744701185483" duration="3006000" />
+      <workItem from="1744701185483" duration="7030000" />
+      <workItem from="1746437990484" duration="681000" />
+      <workItem from="1746519007562" duration="11057000" />
+      <workItem from="1746603759074" duration="2232000" />
+      <workItem from="1746689499961" duration="5776000" />
+      <workItem from="1746777764519" duration="1247000" />
+      <workItem from="1747032713308" duration="4451000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -361,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744644712845</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ADD court details to PadelMatchDTO.">
+      <option name="closed" value="true" />
+      <created>1744710776629</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744710776629</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +410,8 @@
     <MESSAGE value="Preparing merge" />
     <MESSAGE value="MERGE kafka -&gt; main" />
     <MESSAGE value="FIX Date format." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX Date format." />
+    <MESSAGE value="ADD court details to PadelMatchDTO." />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD court details to PadelMatchDTO." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
