@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/padel-match")
@@ -24,9 +26,11 @@ public class PadelMatchController {
     }
 
     @PostMapping("/create-match")
-    public ResponseEntity<String> createMatch(@RequestBody CreateMatchRequest request) {
-        matchService.createPadelMatch(request);
-        return ResponseEntity.ok("Match created");
+    public ResponseEntity<Map<String,Long>> createMatch(@RequestBody CreateMatchRequest request) {
+        PadelMatchEntity match = matchService.createPadelMatch(request);
+        Map<String,Long> response = new HashMap<>();
+        response.put("matchId", match.getId());
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/get-match-by-id/{id}")
