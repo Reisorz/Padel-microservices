@@ -13,8 +13,15 @@ import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.repository.UserRepository;
 import com.mls.service.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.*;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -27,13 +34,17 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Autowired
-    private PadelMatchClient padelMatchClient;
-
-    @Autowired
     private MatchUserClient matchUserClient;
 
     @Autowired
     private AuthUserClient authUserClient;
+
+    private static final List<String> ALLOWED_EXTENSIONS = Arrays.asList("png", "jpg", "jpeg", "gif");
+    private static final List<String> ALLOWED_MIMES = Arrays.asList("image/png", "image/jpg", "image/jpeg", "image/gif");
+
+    @Value("${file.upload-dir}")
+    private String uploadDir;
+
 
     @Override
     public UserEntity registerUser(UserRegisterRequest request) {
@@ -77,6 +88,63 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserEntity> getAllUsersByIds(List<Long> ids) {
         return userRepository.findAllById(ids);
+    }
+
+    @Override
+    public String uploadAvatarImage(MultipartFile file, Long userId) throws Exception {
+        if (file.isEmpty()) {
+            throw new Exception("File is empty");
+        }
+
+        // Validate MIME
+        String mime = file.getContentType();
+        if (!ALLOWED_MIMES.contains(mime)) {
+            throw new Exception("MIME type not allowed: " + mime);
+        }
+
+        // Validate extension
+        String originalName = file.getOriginalFilename();
+        String extension = "";
+        int idx = originalName.lastIndexOf('.');
+        if (idx > 0) {
+            extension = originalName.substring(idx + 1).toLowerCase();
+        }
+        if (!ALLOWED_EXTENSIONS.contains(extension)) {
+            throw new Exception("Extension not allowed: " + extension);
+        }
+
+        String baseName = userId + "_avatar_image";
+
+        // Create folder if it does not exist
+        Path uploadsPath = Paths.get(uploadDir).toAbsolutePath().normalize();
+        if (!Files.exists(uploadsPath)) {
+            Files.createDirectories(uploadsPath);
+        }
+
+        // Delete previous avatar image
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(uploadsPath, baseName + ".*")) {
+            for (Path existingFile : stream) {
+                Files.deleteIfExists(existingFile);
+            }
+        } catch (IOException e) {
+            System.err.println("Warning: failed to delete existing avatar files: " + e.getMessage());
+        }
+
+        String newFileName = baseName + "." + extension;
+        Path filePath = uploadsPath.resolve(newFileName);
+
+        // Save file in folder
+        try {
+            file.transferTo(filePath.toFile());
+        } catch (IOException | IllegalStateException e) {
+            throw new Exception("Error while storing file: " + e.getMessage(), e);
+        }
+
+        // Add path to user atribute
+        UserEntity user = findUserById(userId);
+        user.setAvatarImageUrl("/assets/avatar-images/" + newFileName);
+
+        return userRepository.save(user).getAvatarImageUrl();
     }
 
 

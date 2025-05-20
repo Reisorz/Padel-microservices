@@ -7,6 +7,7 @@ import com.mls.service.user.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -59,4 +60,17 @@ public class UserController {
         return userService.getAllUsersByIds(ids);
     }
 
+
+    @PostMapping("/upload-avatar-image")
+    public ResponseEntity<String> uploadAvatarImage(@RequestParam("file") MultipartFile file, @RequestParam("userId") Long userId) {
+        try {
+            String url = userService.uploadAvatarImage(file, userId);
+            return ResponseEntity.ok("Avatar image uploaded succesfully. URL: " + url);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error while uploading image: " + e.getMessage());
+        }
+    }
+
 }
+
+

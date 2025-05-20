@@ -84,8 +84,11 @@ services:
       - USER_MSVC_DB_PASS=${USER_MSVC_DB_PASS}
       - EUREKA_HOST=msvc-eureka
       - USER_HOST=msvc-user
+      - FILE_UPLOAD_DIR=/app/uploads
     networks:
       - spring
+    volumes:
+      - C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Padel-microservices-frontend/public/assets/avatar-images:/app/uploads
     depends_on:
       msvc-eureka:
         condition: service_healthy

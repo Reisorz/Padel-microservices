@@ -37,5 +37,7 @@ public class UserEntity {
     @Column(name = "preferred_side")
     private PreferredSide preferredSide;
 
+    private String avatarImageUrl;
+
 
 }

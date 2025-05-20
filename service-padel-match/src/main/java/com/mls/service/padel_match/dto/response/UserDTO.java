@@ -24,6 +24,7 @@ public class UserDTO {
     private String city;
     private Double padelLevel;
     private PreferredSide preferredSide;
+    private String avatarImageUrl;
 
     public enum PreferredSide {
         LEFT,

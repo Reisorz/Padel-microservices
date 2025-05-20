@@ -127,6 +127,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
                             .padelLevel(user.getPadelLevel())
                             .team(matchUserInfo.getTeam())
                             .isOrganizer(matchUserInfo.isOrganizer())
+                            .avatarImageUrl(user.getAvatarImageUrl())
                             .build();
                     players.add(matchPlayer);
                 }
