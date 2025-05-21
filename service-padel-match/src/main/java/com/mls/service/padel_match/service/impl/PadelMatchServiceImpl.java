@@ -10,11 +10,14 @@ import com.mls.service.padel_match.mapper.PadelMatchMapper;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.repository.PadelMatchRepository;
 import com.mls.service.padel_match.service.PadelMatchService;
+import com.mls.service.padel_match.specifications.PadelMatchEntitySpecification;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -101,22 +104,34 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     }
 
     @Override
-    public List<PadelMatchDTO> getAllMatchesAndPlayers() {
-        List<PadelMatchEntity> matchEntities = matchRepository.findAll();
+    public List<PadelMatchDTO> getMatchesAndPlayersWithSpecifications(List<LocalDateTime> dates, Double userPadelLevel) {
+
+        //Specifications:
+        // - Matches with startMatchDate coincident with provided dates.
+        // - Matches where userPadelLevel is between matchLevelStart & matchLevelEnd.
+        Specification<PadelMatchEntity> specDates = PadelMatchEntitySpecification.datesIn(dates);
+        Specification<PadelMatchEntity> specUserPadelLevel = PadelMatchEntitySpecification.userPadelLevelBetweenMatchRange(userPadelLevel);
+        Specification<PadelMatchEntity> specFinal = Specification.where(specDates).and(specUserPadelLevel);
+
+        List<PadelMatchEntity> matchEntities = matchRepository.findAll(specFinal);
         List<PadelMatchDTO> padelMatchDTOS = new ArrayList<>();
 
+        // For each match...
         for (PadelMatchEntity matchEntity : matchEntities) {
             List<MatchUserDTO> matchUserDTOS = matchUserClient.getAllUsersFromMatch(matchEntity.getId());
 
+            // Get every player info and make a List
             List<Long> userIds = new ArrayList<>();
             for (MatchUserDTO matchUserDTO : matchUserDTOS) {
                 userIds.add(matchUserDTO.getUserId());
             }
             List<UserDTO> userDTOS = userClient.getAllUsersByIds(userIds);
 
+            // Then create Map for faster search
             Map<Long, MatchUserDTO> matchUserMap = matchUserDTOS.stream()
                     .collect(Collectors.toMap(MatchUserDTO::getUserId, Function.identity()));
 
+            // Then combine the info from matchUserMap & userDTOS into a List of MatchPlayers
             List<MatchPlayer> players = new ArrayList<>();
             for (UserDTO user : userDTOS) {
                 MatchUserDTO matchUserInfo = matchUserMap.get(user.getId());
@@ -133,12 +148,13 @@ public class PadelMatchServiceImpl implements PadelMatchService {
                 }
             }
 
+            // Get the court
             PadelCourtDTO court = padelCourtClient.getPadelCourtById(matchEntity.getPadelCourtId());
 
+            // Combine matchEntity, players and court info into padelMatchDTO and add to the final list.
             PadelMatchDTO padelMatchDTO = mapper.padelMatchEntityToPadelMatchDTO(matchEntity, players, court);
             padelMatchDTOS.add(padelMatchDTO);
         }
         return padelMatchDTOS;
     }
-
 }

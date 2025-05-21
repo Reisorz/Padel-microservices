@@ -6,9 +6,11 @@ import com.mls.service.padel_match.dto.response.PadelMatchDTO;
 import com.mls.service.padel_match.model.PadelMatchEntity;
 import com.mls.service.padel_match.service.impl.PadelMatchServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,9 +47,15 @@ public class PadelMatchController {
         return ResponseEntity.ok("Match with id " + id + " deleted successfully");
     }
 
-    @GetMapping("/get-all-matches-and-players")
-    public List<PadelMatchDTO> getAllMatchesAndPlayers(){
-        return matchService.getAllMatchesAndPlayers();
+    @GetMapping("/get-all-matches-and-players-with-specifications")
+    public List<PadelMatchDTO> getMatchesAndPlayersWithSpecifications(
+            @RequestParam(value = "dates", required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            List<LocalDateTime> dates,
+
+            @RequestParam(value = "userPadelLevel", required = false) Double userPadelLevel
+    ) {
+        return matchService.getMatchesAndPlayersWithSpecifications(dates, userPadelLevel);
     }
 
 }
