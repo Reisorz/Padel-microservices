@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService {
         authUserClient.register(authUserDTO);
 
         UserEntity user = userMapper.fromUserRegisterRequestToUserEntity(request);
+        user.setAvatarImageUrl("/assets/avatar-images/no-avatar.png");
         return userRepository.save(user);
     }
 
