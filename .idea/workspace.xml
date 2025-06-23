@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD replace method to get matches to use Specifications for dynamic filters.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD new users get no-avatar.png.">
+      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/ResourceNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -103,6 +108,7 @@
     &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/spring-batch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -364,7 +370,16 @@
       <workItem from="1747724658420" duration="12582000" />
       <workItem from="1747810413727" duration="13480000" />
       <workItem from="1747902406246" duration="3422000" />
-      <workItem from="1747988647453" duration="2230000" />
+      <workItem from="1747988647453" duration="3345000" />
+      <workItem from="1748325806305" duration="6593000" />
+      <workItem from="1748345080758" duration="1951000" />
+      <workItem from="1748351909029" duration="937000" />
+      <workItem from="1748412879260" duration="743000" />
+      <workItem from="1748416991227" duration="1191000" />
+      <workItem from="1748502492022" duration="288000" />
+      <workItem from="1748502789197" duration="29000" />
+      <workItem from="1750257940689" duration="1277000" />
+      <workItem from="1750688852609" duration="2812000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -446,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747825823380</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ADD new users get no-avatar.png.">
+      <option name="closed" value="true" />
+      <created>1747996697242</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747996697243</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +487,8 @@
     <MESSAGE value="FIX creat-match endpoint returns matchId." />
     <MESSAGE value="ADD method to upload avatar images, and save them into frontend assets folder." />
     <MESSAGE value="ADD replace method to get matches to use Specifications for dynamic filters." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD replace method to get matches to use Specifications for dynamic filters." />
+    <MESSAGE value="ADD new users get no-avatar.png." />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD new users get no-avatar.png." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

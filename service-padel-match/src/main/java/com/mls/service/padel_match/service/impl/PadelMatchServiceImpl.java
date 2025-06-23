@@ -95,6 +95,7 @@ public class PadelMatchServiceImpl implements PadelMatchService {
     }
 
     @Override
+    @Transactional
     public void deleteMatch(Long matchId) {
         PadelMatchEntity match = matchRepository.findById(matchId).orElseThrow(() -> new RuntimeException("Match with id " + matchId + " not found"));
 

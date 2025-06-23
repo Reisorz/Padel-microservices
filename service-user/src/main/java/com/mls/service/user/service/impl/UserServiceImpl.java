@@ -8,6 +8,7 @@ import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.dto.response.MatchUserDTO;
 import com.mls.service.user.dto.response.PadelMatchDTO;
+import com.mls.service.user.exception.ResourceNotFoundException;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.repository.UserRepository;
@@ -61,24 +62,28 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserEntity> getAllUsers() {
-        return userRepository.findAll();
+        try {
+            return userRepository.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public UserEntity findUserById(Long id) {
-        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
+        return userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
     }
 
     @Override
     public UserEntity updateUser(Long id, UserUpdateRequest request) {
-        UserEntity user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
+        UserEntity user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         UserEntity updatedUser = userMapper.fromUserUpdateRequestToUserEntity(request, user);
         return userRepository.save(updatedUser);
     }
 
     @Override
     public void deleteUser(Long id) {
-        UserEntity user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
+        UserEntity user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         List<MatchUserDTO> matches = matchUserClient.getAllMatchesFromUser(id);
         for (MatchUserDTO match : matches){
             matchUserClient.removeUserFromMatch(id,match.getMatchId());
