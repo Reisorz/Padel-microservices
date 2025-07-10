@@ -1,14 +1,12 @@
 package com.mls.service.user.service.impl;
 
+import com.mls.commons.exception.ResourceNotFoundException;
 import com.mls.service.user.client.AuthUserClient;
 import com.mls.service.user.client.MatchUserClient;
-import com.mls.service.user.client.PadelMatchClient;
 import com.mls.service.user.dto.request.AuthUserDTO;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.dto.response.MatchUserDTO;
-import com.mls.service.user.dto.response.PadelMatchDTO;
-import com.mls.service.user.exception.ResourceNotFoundException;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.repository.UserRepository;
@@ -18,9 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.*;
 import java.util.Arrays;
 import java.util.List;

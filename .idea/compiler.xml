@@ -9,29 +9,20 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="service-gateway" />
+        <module name="service-notification" />
         <module name="service-match-user" />
         <module name="service-user" />
         <module name="service-auth" />
+        <module name="commons" />
         <module name="service-padel-court" />
         <module name="service-eureka" />
         <module name="service-padel-match" />
       </profile>
-      <profile name="Annotation profile for service-notification" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="service-notification" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="21" />
-      <module name="commons" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

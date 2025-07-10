@@ -30,6 +30,11 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>com.mls.padel</groupId>
+			<artifactId>commons</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
