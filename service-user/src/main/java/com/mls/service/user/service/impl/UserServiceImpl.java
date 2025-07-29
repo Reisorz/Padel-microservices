@@ -2,13 +2,11 @@ package com.mls.service.user.service.impl;
 
 import com.mls.service.user.client.AuthUserClient;
 import com.mls.service.user.client.MatchUserClient;
-import com.mls.service.user.client.PadelMatchClient;
 import com.mls.service.user.dto.request.AuthUserDTO;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.dto.response.MatchUserDTO;
-import com.mls.service.user.dto.response.PadelMatchDTO;
-import com.mls.service.user.exception.ResourceNotFoundException;
+import com.mls.service.user.exception.*;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.repository.UserRepository;
@@ -18,9 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.*;
 import java.util.Arrays;
 import java.util.List;
@@ -99,13 +95,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public String uploadAvatarImage(MultipartFile file, Long userId) throws Exception {
         if (file.isEmpty()) {
-            throw new Exception("File is empty");
+            throw new BadRequestException("File is empty");
         }
 
         // Validate MIME
         String mime = file.getContentType();
         if (!ALLOWED_MIMES.contains(mime)) {
-            throw new Exception("MIME type not allowed: " + mime);
+            throw new BadRequestException("MIME type not allowed: " + mime);
         }
 
         // Validate extension
@@ -116,7 +112,7 @@ public class UserServiceImpl implements UserService {
             extension = originalName.substring(idx + 1).toLowerCase();
         }
         if (!ALLOWED_EXTENSIONS.contains(extension)) {
-            throw new Exception("Extension not allowed: " + extension);
+            throw new BadRequestException("Extension not allowed: " + extension);
         }
 
         String baseName = userId + "_avatar_image";
@@ -124,7 +120,11 @@ public class UserServiceImpl implements UserService {
         // Create folder if it does not exist
         Path uploadsPath = Paths.get(uploadDir).toAbsolutePath().normalize();
         if (!Files.exists(uploadsPath)) {
-            Files.createDirectories(uploadsPath);
+            try {
+                Files.createDirectories(uploadsPath);
+            } catch (IOException e) {
+                throw new FileStorageException("Failed to create directory: " + e.getMessage(), e);
+            }
         }
 
         // Delete previous avatar image
@@ -133,7 +133,7 @@ public class UserServiceImpl implements UserService {
                 Files.deleteIfExists(existingFile);
             }
         } catch (IOException e) {
-            System.err.println("Warning: failed to delete existing avatar files: " + e.getMessage());
+            throw new FileStorageException("Failed to delete file: " + e.getMessage(), e);
         }
 
         String newFileName = baseName + "." + extension;
@@ -143,7 +143,7 @@ public class UserServiceImpl implements UserService {
         try {
             file.transferTo(filePath.toFile());
         } catch (IOException | IllegalStateException e) {
-            throw new Exception("Error while storing file: " + e.getMessage(), e);
+            throw new FileStorageException("Error while storing file: " + e.getMessage(), e);
         }
 
         // Add path to user atribute

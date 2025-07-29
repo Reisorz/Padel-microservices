@@ -13,8 +13,7 @@ import java.time.LocalDateTime;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(
-            ResourceNotFoundException ex, ServletWebRequest request) {
+    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex, ServletWebRequest request) {
 
         ErrorResponse errorResponse = ErrorResponse.builder()
                 .status(404)
@@ -25,6 +24,32 @@ public class GlobalExceptionHandler {
                 .build();
 
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException ex, ServletWebRequest request) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .status(400)
+                .message(ex.getMessage())
+                .details("Bad request")
+                .path(request.getRequest().getRequestURI())
+                .timestamp(LocalDateTime.now())
+                .build();
+
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(FileStorageException.class)
+    public ResponseEntity<ErrorResponse> handleFileStorageException(FileStorageException ex, ServletWebRequest request) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .status(500)
+                .message(ex.getMessage())
+                .details("Error in File system")
+                .path(request.getRequest().getRequestURI())
+                .timestamp(LocalDateTime.now())
+                .build();
+
+        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD path to ErrorResponse.">
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/FileStorageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,6 +384,7 @@
       <workItem from="1751470094678" duration="2099000" />
       <workItem from="1751986292409" duration="2575000" />
       <workItem from="1752039323823" duration="1603000" />
+      <workItem from="1753766588050" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -492,6 +496,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FIX eliminate commons module." />
     <MESSAGE value="FIX consumer config. Kafka now working properly." />
@@ -507,7 +522,8 @@
     <MESSAGE value="ADD new users get no-avatar.png." />
     <MESSAGE value="ADD GlobalExceptionHandler and ResourceNotFoundException." />
     <MESSAGE value="ADD path to ErrorResponse." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD path to ErrorResponse." />
+    <MESSAGE value="Moving back to main. Discarding commons module for exceptions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving back to main. Discarding commons module for exceptions." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
