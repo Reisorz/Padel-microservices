@@ -55,7 +55,7 @@ spring:
         - id: user
           uri: lb://msvc-user
           predicates:
-            - Path=/user/**
+            - Path=/user/**, /follower/**
           filters:
             - AuthFilter
         - id: padel-match
