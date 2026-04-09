@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD FileStorageException.">
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/FollowerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/model/FollowerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/FollowerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/FollowerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/FollowerServiceImpl.java" afterDir="false" />
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD logic to follow other users. FIX Dockerfiles java images.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-auth/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-eureka/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-eureka/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-notification/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-court/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/FollowerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/FollowerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/FollowerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/FollowerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/FollowerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/FollowerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/FollowerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/FollowerServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,48 +81,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt.executor": "Run",
-    "Maven.Padel-microservices [clean].executor": "Run",
-    "Maven.Padel-microservices [install].executor": "Run",
-    "Maven.Padel-microservices [package].executor": "Run",
-    "Maven.common [clean].executor": "Run",
-    "Maven.common [install].executor": "Run",
-    "Maven.common [package].executor": "Run",
-    "Maven.service-gateway [clean].executor": "Run",
-    "Maven.service-gateway [package].executor": "Run",
-    "Maven.service-notification [clean].executor": "Run",
-    "Maven.service-notification [install].executor": "Run",
-    "Maven.service-notification [package].executor": "Run",
-    "Maven.service-padel-court [clean].executor": "Run",
-    "Maven.service-padel-court [install].executor": "Run",
-    "Maven.service-padel-court [package].executor": "Run",
-    "Maven.service-padel-match [clean].executor": "Run",
-    "Maven.service-padel-match [install].executor": "Run",
-    "Maven.service-user [clean].executor": "Run",
-    "Maven.service-user [install].executor": "Run",
-    "Maven.service-user [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ServiceEurekaApplication.executor": "Run",
-    "git-widget-placeholder": "feature/user-followers",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Nethits/Prueba",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-gateway [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/user-followers&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Nethits/Prueba&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -442,7 +432,8 @@
       <workItem from="1774458061643" duration="2208000" />
       <workItem from="1774542483968" duration="1111000" />
       <workItem from="1775049942113" duration="6358000" />
-      <workItem from="1775122069798" duration="9813000" />
+      <workItem from="1775122069798" duration="10086000" />
+      <workItem from="1775743987679" duration="4935000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -556,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753768313865</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ADD logic to follow other users. FIX Dockerfiles java images.">
+      <option name="closed" value="true" />
+      <created>1775144050350</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1775144050350</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +589,8 @@
     <MESSAGE value="ADD path to ErrorResponse." />
     <MESSAGE value="Moving back to main. Discarding commons module for exceptions." />
     <MESSAGE value="ADD FileStorageException." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD FileStorageException." />
+    <MESSAGE value="ADD logic to follow other users. FIX Dockerfiles java images." />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD logic to follow other users. FIX Dockerfiles java images." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

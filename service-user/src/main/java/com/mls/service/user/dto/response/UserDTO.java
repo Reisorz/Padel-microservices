@@ -1,13 +1,13 @@
 package com.mls.service.user.dto.response;
 
 import com.mls.service.user.model.PreferredSide;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDTO {
 
     private Long id;
@@ -21,5 +21,6 @@ public class UserDTO {
     private PreferredSide preferredSide;
 
     private String avatarImageUrl;
+
 
 }

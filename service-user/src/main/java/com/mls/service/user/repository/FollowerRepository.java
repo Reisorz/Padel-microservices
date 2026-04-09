@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface FollowerRepository extends JpaRepository<FollowerEntity, Long> {
 
     boolean existsByFollowerIdAndFollowedId(Long followerId, Long followedId);
+
+    Page<FollowerEntity> findByFollowedId(Long followedId, Pageable pageable);
 }
