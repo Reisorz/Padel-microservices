@@ -1,2 +1,3 @@
 *.env
 uploads/
+/.idea/git rm --cached .idea/workspace.xml
