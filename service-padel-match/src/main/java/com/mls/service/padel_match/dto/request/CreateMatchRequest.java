@@ -37,14 +37,19 @@ public class CreateMatchRequest {
 
     private Double matchLevelEnd;
 
-    private List<Long> teamA;
-
-    private List<Long> teamB;
+    private List<PlayerSlot> players;
 
     private Long organizer;
 
     private Long padelCourtId;
 
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class PlayerSlot {
+        private Long userId;
+        private int slot;
+    }
 }
 
 

@@ -58,33 +58,32 @@ public class PadelMatchServiceImpl implements PadelMatchService {
         padelCourtClient.getPadelCourtById(request.getPadelCourtId());
 
         //Check if users exist
-        List<Long> players = new ArrayList<>();
-        players.addAll(request.getTeamA());
-        players.addAll(request.getTeamB());
-        for(Long player: players){
-            userClient.getUserById(player);
+        List<CreateMatchRequest.PlayerSlot> players = new ArrayList<>(request.getPlayers());
+        for(CreateMatchRequest.PlayerSlot player: players){
+            userClient.getUserById(player.getUserId());
         }
 
         PadelMatchEntity match = mapper.createMatchRequestToPadelMatchEntity(request);
         PadelMatchEntity savedMatch = matchRepository.save(match);
 
         //Add users to match
-        boolean isOrganizer = false;
-        List<Long> teamA = request.getTeamA();
-        for(Long player: teamA){
-            isOrganizer = Objects.equals(player, request.getOrganizer());
-            matchUserClient.addUserToMatch(player,savedMatch.getId(),"A", isOrganizer);
-        }
+        for (CreateMatchRequest.PlayerSlot player : request.getPlayers()) {
+            boolean isOrganizer = Objects.equals(player.getUserId(), request.getOrganizer());
 
-        List<Long> teamB = request.getTeamB();
-        for(Long player: teamB){
-            isOrganizer = Objects.equals(player, request.getOrganizer());
-            matchUserClient.addUserToMatch(player,savedMatch.getId(),"B", isOrganizer);
+            MatchUserDTO matchUserDTO = MatchUserDTO.builder()
+                    .matchId(savedMatch.getId())
+                    .userId(player.getUserId())
+                    .slot(player.getSlot())
+                    .isOrganizer(isOrganizer)
+                    .build();
+            matchUserClient.addUserToMatch(matchUserDTO);
         }
 
         //Kafka
-        teamA.addAll(teamB);
-        createMatchProducer.sendCreateMatchEvent(teamA, savedMatch.getId());
+        List<Long> playerIds = request.getPlayers().stream()
+                .map(CreateMatchRequest.PlayerSlot::getUserId)
+                .collect(Collectors.toList());
+        createMatchProducer.sendCreateMatchEvent(playerIds, savedMatch.getId());
 
         return savedMatch;
     }

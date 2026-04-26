@@ -2,6 +2,7 @@ package com.mls.service.match_user.controller;
 
 import com.mls.service.match_user.model.MatchUserEntity;
 import com.mls.service.match_user.service.MatchUserService;
+import com.mls.service.match_user.service.impl.MatchUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +14,12 @@ import java.util.List;
 public class MatchUserController {
 
     @Autowired
-    private MatchUserService matchUserService;
+    private MatchUserServiceImpl matchUserService;
 
-    @PostMapping("/add-user-to-match/{userId}/{matchId}/{team}/{isOrganizer}")
-    public ResponseEntity<String> addUserToMatch(@PathVariable Long userId, @PathVariable Long matchId, @PathVariable String team, @PathVariable boolean isOrganizer) {
-        matchUserService.addUserToMatch(userId, matchId, team, isOrganizer);
-        return ResponseEntity.ok("User " + userId + " has been added to the match " + matchId);
+    @PostMapping("/add-user-to-match")
+    public ResponseEntity<String> addUserToMatch(@RequestBody MatchUserEntity matchUser) {
+        matchUserService.addUserToMatch(matchUser);
+        return ResponseEntity.ok("User " + matchUser.getId() + " has been added to the match " + matchUser.getMatchId());
     }
 
     @DeleteMapping("/remove-user-from-match/{userId}/{matchId}")

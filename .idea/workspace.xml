@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD pageable followerByUserId">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX gitignore.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/controller/MatchUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/controller/MatchUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/model/MatchUserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/model/MatchUserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/MatchUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/MatchUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/impl/MatchUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/impl/MatchUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/MatchUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/MatchUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/request/CreateMatchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/request/CreateMatchRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +113,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ServiceEurekaApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "fix/match-user-slot",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Nethits/Prueba",
     "node.js.detected.package.eslint": "true",
@@ -569,7 +576,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775750129353</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="FIX gitignore.">
+      <option name="closed" value="true" />
+      <created>1777209920297</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1777209920297</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +632,8 @@
     <MESSAGE value="ADD FileStorageException." />
     <MESSAGE value="ADD logic to follow other users. FIX Dockerfiles java images." />
     <MESSAGE value="ADD pageable followerByUserId" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD pageable followerByUserId" />
+    <MESSAGE value="FIX gitignore." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX gitignore." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

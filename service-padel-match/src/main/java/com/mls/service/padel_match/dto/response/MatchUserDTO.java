@@ -16,6 +16,7 @@ public class MatchUserDTO {
     private Long matchId;
     private Long userId;
     private boolean isOrganizer;
+    private int slot;
     private Team team;
 
     public enum Team {

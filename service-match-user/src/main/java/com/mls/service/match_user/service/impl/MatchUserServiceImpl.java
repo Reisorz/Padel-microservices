@@ -20,12 +20,17 @@ public class MatchUserServiceImpl implements MatchUserService {
     private PadelMatchClient padelMatchClient;
 
     @Override
-    public MatchUserEntity addUserToMatch(Long userId, Long matchId, String team, boolean isOrganizer) {
+    public MatchUserEntity addUserToMatch(MatchUserEntity request) {
+        MatchUserEntity.Team assignedTeam = (request.getSlot() < 2)
+                ? MatchUserEntity.Team.A
+                : MatchUserEntity.Team.B;
+
         MatchUserEntity matchUser = MatchUserEntity.builder()
-                .userId(userId)
-                .matchId(matchId)
-                .team(MatchUserEntity.Team.valueOf(team))
-                .isOrganizer(isOrganizer)
+                .userId(request.getUserId())
+                .matchId(request.getMatchId())
+                .team(assignedTeam)
+                .isOrganizer(request.isOrganizer())
+                .slot(request.getSlot())
                 .build();
         return matchUserRepository.save(matchUser);
     }

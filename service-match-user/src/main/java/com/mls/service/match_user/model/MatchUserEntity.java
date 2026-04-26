@@ -27,6 +27,9 @@ public class MatchUserEntity {
     @Column(nullable = false)
     private boolean isOrganizer;
 
+    @Column(nullable = false)
+    private int slot;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Team team;
