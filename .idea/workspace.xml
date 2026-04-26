@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD logic to follow other users. FIX Dockerfiles java images.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD pageable followerByUserId">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/FollowerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/FollowerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/FollowerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/FollowerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/FollowerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/FollowerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/FollowerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/FollowerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +429,17 @@
       <workItem from="1774542483968" duration="1111000" />
       <workItem from="1775049942113" duration="6358000" />
       <workItem from="1775122069798" duration="10086000" />
-      <workItem from="1775743987679" duration="4935000" />
+      <workItem from="1775743987679" duration="5669000" />
+      <workItem from="1775810174066" duration="5653000" />
+      <workItem from="1776155319712" duration="3227000" />
+      <workItem from="1776330019467" duration="4630000" />
+      <workItem from="1776611123996" duration="788000" />
+      <workItem from="1776696016462" duration="4000" />
+      <workItem from="1776701076735" duration="2040000" />
+      <workItem from="1777039345402" duration="5842000" />
+      <workItem from="1777127048253" duration="1840000" />
+      <workItem from="1777132174664" duration="649000" />
+      <workItem from="1777206473990" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -555,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775144050350</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ADD pageable followerByUserId">
+      <option name="closed" value="true" />
+      <created>1775750129353</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1775750129353</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +580,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/user-followers" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -590,7 +616,8 @@
     <MESSAGE value="Moving back to main. Discarding commons module for exceptions." />
     <MESSAGE value="ADD FileStorageException." />
     <MESSAGE value="ADD logic to follow other users. FIX Dockerfiles java images." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD logic to follow other users. FIX Dockerfiles java images." />
+    <MESSAGE value="ADD pageable followerByUserId" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD pageable followerByUserId" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
