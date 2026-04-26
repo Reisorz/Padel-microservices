@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX gitignore.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX added slot atribute to MatchUserEntity.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/controller/MatchUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/controller/MatchUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/model/MatchUserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/model/MatchUserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/MatchUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/MatchUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/impl/MatchUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/src/main/java/com/mls/service/match_user/service/impl/MatchUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/MatchUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/client/MatchUserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/request/CreateMatchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/request/CreateMatchRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +97,7 @@
     "Maven.service-padel-court [package].executor": "Run",
     "Maven.service-padel-match [clean].executor": "Run",
     "Maven.service-padel-match [install].executor": "Run",
+    "Maven.service-padel-match [package].executor": "Run",
     "Maven.service-user [clean].executor": "Run",
     "Maven.service-user [install].executor": "Run",
     "Maven.service-user [package].executor": "Run",
@@ -584,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777209920297</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="FIX added slot atribute to MatchUserEntity.">
+      <option name="closed" value="true" />
+      <created>1777215034586</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1777215034586</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +636,8 @@
     <MESSAGE value="ADD logic to follow other users. FIX Dockerfiles java images." />
     <MESSAGE value="ADD pageable followerByUserId" />
     <MESSAGE value="FIX gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX gitignore." />
+    <MESSAGE value="FIX added slot atribute to MatchUserEntity." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX added slot atribute to MatchUserEntity." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

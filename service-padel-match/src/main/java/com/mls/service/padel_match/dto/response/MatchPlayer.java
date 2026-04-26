@@ -15,9 +15,8 @@ public class MatchPlayer {
     private String name;
     private Double padelLevel;
     private boolean isOrganizer;
+    private int slot;
     private String avatarImageUrl;
-
-    @Enumerated(EnumType.STRING)
     private MatchUserDTO.Team team;
 
 }

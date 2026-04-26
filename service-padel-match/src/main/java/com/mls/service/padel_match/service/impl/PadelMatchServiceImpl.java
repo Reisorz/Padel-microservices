@@ -18,10 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -142,16 +139,15 @@ public class PadelMatchServiceImpl implements PadelMatchService {
                             .padelLevel(user.getPadelLevel())
                             .team(matchUserInfo.getTeam())
                             .isOrganizer(matchUserInfo.isOrganizer())
+                            .slot(matchUserInfo.getSlot())
                             .avatarImageUrl(user.getAvatarImageUrl())
                             .build();
                     players.add(matchPlayer);
                 }
             }
+            players.sort(Comparator.comparingInt(MatchPlayer::getSlot));
 
-            // Get the court
             PadelCourtDTO court = padelCourtClient.getPadelCourtById(matchEntity.getPadelCourtId());
-
-            // Combine matchEntity, players and court info into padelMatchDTO and add to the final list.
             PadelMatchDTO padelMatchDTO = mapper.padelMatchEntityToPadelMatchDTO(matchEntity, players, court);
             padelMatchDTOS.add(padelMatchDTO);
         }
