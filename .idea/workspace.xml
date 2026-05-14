@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX added slot atribute to MatchUserEntity.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX added slot to getMatchesAndPlayersWithSpecifications().">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/dto/response/MatchPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,49 +81,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt.executor": "Run",
-    "Maven.Padel-microservices [clean].executor": "Run",
-    "Maven.Padel-microservices [install].executor": "Run",
-    "Maven.Padel-microservices [package].executor": "Run",
-    "Maven.common [clean].executor": "Run",
-    "Maven.common [install].executor": "Run",
-    "Maven.common [package].executor": "Run",
-    "Maven.service-gateway [clean].executor": "Run",
-    "Maven.service-gateway [package].executor": "Run",
-    "Maven.service-notification [clean].executor": "Run",
-    "Maven.service-notification [install].executor": "Run",
-    "Maven.service-notification [package].executor": "Run",
-    "Maven.service-padel-court [clean].executor": "Run",
-    "Maven.service-padel-court [install].executor": "Run",
-    "Maven.service-padel-court [package].executor": "Run",
-    "Maven.service-padel-match [clean].executor": "Run",
-    "Maven.service-padel-match [install].executor": "Run",
-    "Maven.service-padel-match [package].executor": "Run",
-    "Maven.service-user [clean].executor": "Run",
-    "Maven.service-user [install].executor": "Run",
-    "Maven.service-user [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ServiceEurekaApplication.executor": "Run",
-    "git-widget-placeholder": "fix/match-user-slot",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Nethits/Prueba",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Padel-microservices [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-gateway [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-notification [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-court [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-padel-match [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-user [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ServiceAuthApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceMatchUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceNotificationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePadelCourtApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePadelMatchApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Padel-microservices/.env&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -131,7 +144,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceEurekaApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceUserApplication">
+    <configuration name="Padel-microservices (Spring Boot)" type="CompoundRunConfigurationType">
+      <toRun name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceGatewayApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceMatchUserApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceNotificationApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServicePadelCourtApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
     <configuration name="PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service-padel-court" />
       <extension name="coverage">
@@ -238,23 +262,20 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="common" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.common.CommonApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="commons" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.padel.commons.CommonsApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-auth" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.auth.ServiceAuthApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -268,6 +289,16 @@
         <option name="environmentVariables" />
       </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.eureka.ServiceEurekaApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -275,13 +306,39 @@
     <configuration name="ServiceGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.gateway.ServiceGatewayApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ServiceMatchUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="service-match-user" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.match_user.ServiceMatchUserApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -294,33 +351,70 @@
       </method>
     </configuration>
     <configuration name="ServicePadelCourtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="service-padel-court" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_court.ServicePadelCourtApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="service-padel-match" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_match.ServicePadelMatchApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
       <module name="service-user" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.user.ServiceUserApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Compound.Padel-microservices (Spring Boot)" />
       <item itemvalue="JUnit.PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" />
       <item itemvalue="Maven.Padel-microservices [package]" />
       <item itemvalue="Maven.service-notification [package]" />
       <item itemvalue="Maven.service-padel-court [package]" />
-      <item itemvalue="Spring Boot.CommonApplication" />
-      <item itemvalue="Spring Boot.CommonsApplication" />
       <item itemvalue="Spring Boot.ServiceAuthApplication" />
       <item itemvalue="Spring Boot.ServiceEurekaApplication" />
       <item itemvalue="Spring Boot.ServiceGatewayApplication" />
@@ -442,6 +536,12 @@
       <workItem from="1777127048253" duration="1840000" />
       <workItem from="1777132174664" duration="649000" />
       <workItem from="1777206473990" duration="1341000" />
+      <workItem from="1777479731801" duration="1076000" />
+      <workItem from="1777480827671" duration="769000" />
+      <workItem from="1778074612808" duration="5973000" />
+      <workItem from="1778129952584" duration="168000" />
+      <workItem from="1778130127861" duration="6000" />
+      <workItem from="1778135890951" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -594,6 +694,26 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -604,7 +724,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature/user-followers" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -638,6 +758,17 @@
     <MESSAGE value="FIX gitignore." />
     <MESSAGE value="FIX added slot atribute to MatchUserEntity." />
     <option name="LAST_COMMIT_MESSAGE" value="FIX added slot atribute to MatchUserEntity." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,6 +2,7 @@ package com.mls.service.user.controller;
 
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
+import com.mls.service.user.dto.response.UserDTO;
 import com.mls.service.user.model.UserEntity;
 import com.mls.service.user.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +70,12 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error while uploading image: " + e.getMessage());
         }
+    }
+
+    @GetMapping("/get-user-by-email")
+    public ResponseEntity<UserDTO> getUserByEmail(@RequestParam("email") String email) {
+        UserDTO user = userService.findUserByEmail(email);
+        return ResponseEntity.ok(user);
     }
 
 }

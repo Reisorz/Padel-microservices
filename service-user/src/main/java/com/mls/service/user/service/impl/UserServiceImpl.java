@@ -6,6 +6,7 @@ import com.mls.service.user.dto.request.AuthUserDTO;
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
 import com.mls.service.user.dto.response.MatchUserDTO;
+import com.mls.service.user.dto.response.UserDTO;
 import com.mls.service.user.exception.*;
 import com.mls.service.user.mapper.UserMapper;
 import com.mls.service.user.model.UserEntity;
@@ -151,6 +152,19 @@ public class UserServiceImpl implements UserService {
         user.setAvatarImageUrl("/assets/avatar-images/" + newFileName);
 
         return userRepository.save(user).getAvatarImageUrl();
+    }
+
+    @Override
+    public UserDTO findUserByEmail(String email) {
+        UserEntity userEntity = userRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User with email " + email + " not found"));
+        return UserDTO.builder()
+                .name(userEntity.getName())
+                .city(userEntity.getCity())
+                .avatarImageUrl(userEntity.getAvatarImageUrl())
+                .id(userEntity.getId())
+                .padelLevel(userEntity.getPadelLevel())
+                .preferredSide(userEntity.getPreferredSide())
+                .build();
     }
 
 

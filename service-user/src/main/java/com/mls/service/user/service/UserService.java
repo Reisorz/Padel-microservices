@@ -2,6 +2,7 @@ package com.mls.service.user.service;
 
 import com.mls.service.user.dto.request.UserRegisterRequest;
 import com.mls.service.user.dto.request.UserUpdateRequest;
+import com.mls.service.user.dto.response.UserDTO;
 import com.mls.service.user.model.UserEntity;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,4 +25,5 @@ public interface UserService {
     public String uploadAvatarImage(MultipartFile file, Long userId) throws Exception;
 
 
+    UserDTO findUserByEmail(String email);
 }
