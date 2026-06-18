@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="FIX added slot to getMatchesAndPlayersWithSpecifications().">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD endpoint to find user by email.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/dto/response/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/mls/service/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-auth/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-eureka/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-eureka/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-match-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-notification/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-court/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-padel-match/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,16 +119,19 @@
     &quot;Spring Boot.ServiceMatchUserApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ServiceNotificationApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ServicePadelCourtApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServicePadelMatchApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServicePadelMatchApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Spring Boot.ServiceUserApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/Padel-microservices/.env&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/kafka&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -144,7 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceUserApplication">
+  <component name="RunManager" selected="Spring Boot.ServicePadelMatchApplication">
     <configuration name="Padel-microservices (Spring Boot)" type="CompoundRunConfigurationType">
       <toRun name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" />
@@ -155,6 +161,33 @@
       <toRun name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" />
       <toRun name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" />
       <method v="2" />
+    </configuration>
+    <configuration name="Padel-microservices (Spring Boot)" type="CompoundRunConfigurationType">
+      <toRun name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceGatewayApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceMatchUserApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceNotificationApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServicePadelCourtApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" />
+      <toRun name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-padel-court" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mls.service.padel_court.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mls.service.padel_court.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.mls.service.padel_court.controller.PadelCourtControllerTests" />
+      <option name="METHOD_NAME" value="testSavePadelCourt_ShouldSavePadelCourt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PadelCourtControllerTests.testSavePadelCourt_ShouldSavePadelCourt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service-padel-court" />
@@ -197,6 +230,66 @@
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Padel-microservices [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-notification [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-notification" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -262,6 +355,54 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="service-padel-court [package]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/service-padel-court" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.auth.ServiceAuthApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-auth" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.auth.ServiceAuthApplication" />
@@ -289,6 +430,46 @@
         <option name="environmentVariables" />
       </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.eureka.ServiceEurekaApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-eureka" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.eureka.ServiceEurekaApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.gateway.ServiceGatewayApplication" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -343,9 +524,62 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceMatchUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-match-user" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.match_user.ServiceMatchUserApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceNotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="service-notification" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.notification.ServiceNotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceNotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="service-notification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.notification.ServiceNotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePadelCourtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-padel-court" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_court.ServicePadelCourtApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -382,6 +616,42 @@
         <option name="environmentVariables" />
       </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_match.ServicePadelMatchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicePadelMatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-padel-match" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.padel_match.ServicePadelMatchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/.env" />
+      </option>
+      <module name="service-user" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mls.service.user.ServiceUserApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -542,6 +812,18 @@
       <workItem from="1778129952584" duration="168000" />
       <workItem from="1778130127861" duration="6000" />
       <workItem from="1778135890951" duration="31000" />
+      <workItem from="1778773755988" duration="3154000" />
+      <workItem from="1781500711409" duration="15000" />
+      <workItem from="1781501504551" duration="97000" />
+      <workItem from="1781501776129" duration="6000" />
+      <workItem from="1781502183430" duration="29000" />
+      <workItem from="1781502953682" duration="35000" />
+      <workItem from="1781504248503" duration="598000" />
+      <workItem from="1781505957861" duration="72000" />
+      <workItem from="1781506562429" duration="302000" />
+      <workItem from="1781589158275" duration="3881000" />
+      <workItem from="1781672101329" duration="5000" />
+      <workItem from="1781800245762" duration="628000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -687,7 +969,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777215034586</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ADD endpoint to find user by email.">
+      <option name="closed" value="true" />
+      <created>1778773813795</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1778773813795</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -757,15 +1047,16 @@
     <MESSAGE value="ADD pageable followerByUserId" />
     <MESSAGE value="FIX gitignore." />
     <MESSAGE value="FIX added slot atribute to MatchUserEntity." />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX added slot atribute to MatchUserEntity." />
+    <MESSAGE value="ADD endpoint to find user by email." />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD endpoint to find user by email." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service-padel-match/src/main/java/com/mls/service/padel_match/service/impl/PadelMatchServiceImpl.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
+          <line>54</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

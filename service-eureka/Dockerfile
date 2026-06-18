@@ -1,6 +1,6 @@
-FROM eclipse-temurin:21-jdk-jammy
+FROM eclipse-temurin:21-jre-alpine
 # Install curl
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache curl
 ARG JAR_FILE=target/service-eureka-0.0.1.jar
 COPY ${JAR_FILE} service-eureka.jar
 EXPOSE 8761
