@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="ADD endpoint to find user by email.">
+    <list default="true" id="14a5d270-5f16-4679-880b-c590b8203a1d" name="Changes" comment="refactor: Changing Dockerfiles java image.">
+      <change afterPath="$PROJECT_DIR$/service-user/src/test/java/com/mls/service/user/service/impl/FollowerServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/src/test/java/com/mls/service/user/service/impl/UserServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-auth/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-eureka/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-eureka/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-gateway/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-match-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-match-user/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-notification/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-notification/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-court/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-court/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-padel-match/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-padel-match/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +117,7 @@
     &quot;Spring Boot.ServiceUserApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/kafka&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/migue/Desktop/Miguel/DesarrolloWeb/Java/arquitectura-hexagonal&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -823,7 +817,10 @@
       <workItem from="1781506562429" duration="302000" />
       <workItem from="1781589158275" duration="3881000" />
       <workItem from="1781672101329" duration="5000" />
-      <workItem from="1781800245762" duration="628000" />
+      <workItem from="1781800245762" duration="1530000" />
+      <workItem from="1781846842858" duration="665000" />
+      <workItem from="1782404572015" duration="191000" />
+      <workItem from="1782404819805" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="FIX eliminate commons module.">
       <option name="closed" value="true" />
@@ -977,7 +974,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778773813795</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor: Changing Dockerfiles java image.">
+      <option name="closed" value="true" />
+      <created>1781801309283</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1781801309283</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1048,7 +1053,8 @@
     <MESSAGE value="FIX gitignore." />
     <MESSAGE value="FIX added slot atribute to MatchUserEntity." />
     <MESSAGE value="ADD endpoint to find user by email." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD endpoint to find user by email." />
+    <MESSAGE value="refactor: Changing Dockerfiles java image." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Changing Dockerfiles java image." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
